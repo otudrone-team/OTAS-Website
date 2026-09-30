@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clock } from 'lucide-react';
+import { AlertTriangle, Clock } from 'lucide-react';
 import { SITE_CONFIG } from '../data/content';
 
 export const StatusBanner: React.FC = () => {
@@ -9,51 +9,36 @@ export const StatusBanner: React.FC = () => {
     return null;
   }
 
-  const fullNoticeText = `${config.message}${config.subtext ? ` (${config.subtext})` : ''}`;
-
   return (
     <aside
       aria-label="University Recognition Status Notice"
-      className="w-full border-b border-[#F15A32]/30 bg-[#1F1916] text-[#F1F0EC] shadow-xs overflow-hidden"
+      className="w-full border-b border-[#F15A32]/40 bg-[#1F1916] text-[#F1F0EC] shadow-sm"
     >
-      <div className="mx-auto flex h-9 max-w-6xl items-center justify-between px-3 sm:px-6 lg:px-8 text-xs">
-        <div className="flex items-center gap-2.5 min-w-0 flex-1 overflow-hidden">
-          {/* Compact Status Pill */}
-          <span className="shrink-0 z-10 rounded bg-[#F15A32] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#191B1F]">
-            {config.badge}
-          </span>
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3.5 min-w-0 max-w-4xl">
+          {/* Prominent High-Visibility Status Pill Badge */}
+          <div className="inline-flex items-center gap-1.5 self-start shrink-0 rounded-md bg-[#F15A32] px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-[#191B1F]">
+            <AlertTriangle className="h-3.5 w-3.5 stroke-[2.5]" />
+            <span>{config.badge}</span>
+          </div>
 
-          {/* Desktop/Tablet (>=md): Clean static text */}
-          <div className="hidden md:flex items-center text-[#E2E4E2] truncate">
-            <span>{config.message}</span>
+          {/* Primary Statement & Disclaimer - with comfortable spacing and balanced width */}
+          <div className="text-xs text-[#E2E4E2] leading-snug">
+            <span className="font-semibold text-[#F1F0EC]">
+              {config.message}
+            </span>
             {config.subtext && (
-              <span className="ml-1.5 text-[#F15A32] font-medium whitespace-nowrap">
-                ({config.subtext})
+              <span className="block sm:inline sm:ml-2 text-[#F15A32] font-medium text-[11px]">
+                • {config.subtext}
               </span>
             )}
           </div>
-
-          {/* Mobile/Smaller views (<md): Auto horizontally moving text loop */}
-          <div className="flex md:hidden relative overflow-hidden flex-1 h-6 items-center">
-            {/* Soft gradient edge masks */}
-            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-3 bg-gradient-to-r from-[#1F1916] to-transparent z-10" />
-            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-4 bg-gradient-to-l from-[#1F1916] to-transparent z-10" />
-
-            <div className="inline-flex whitespace-nowrap animate-marquee will-change-transform">
-              <span className="text-[#E2E4E2] font-medium pr-10 text-xs">
-                {fullNoticeText}
-              </span>
-              <span className="text-[#E2E4E2] font-medium pr-10 text-xs">
-                {fullNoticeText}
-              </span>
-            </div>
-          </div>
         </div>
 
-        {/* Subtle status tag on desktop */}
-        <div className="hidden sm:flex items-center gap-1.5 shrink-0 pl-3 font-mono text-[11px] text-[#979C9F]">
-          <Clock className="h-3 w-3 text-[#F15A32]" />
-          <span>Pending approval</span>
+        {/* Live indicator showing ongoing review */}
+        <div className="hidden lg:flex items-center gap-1.5 shrink-0 pl-4 ml-4 font-mono text-[11px] text-[#C4C6C5] border-l border-[#444A50]">
+          <Clock className="h-3.5 w-3.5 text-[#F15A32]" />
+          <span className="whitespace-nowrap">Pending Approval</span>
         </div>
       </div>
     </aside>

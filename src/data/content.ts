@@ -110,9 +110,9 @@ export const SITE_CONFIG: SiteConfig = {
   // Provisional / Pending University Status Banner
   provisionalStatusNotice: {
     enabled: true,
-    badge: "Under Review",
-    message: "Pre-launch design team awaiting formal university recognition.",
-    subtext: "Approval in progress",
+    badge: "Official Status: Under Review",
+    message: "OTAS (Ontario Tech Aerial Systems) is actively operating in its pre-launch planning phase with weekly meetings and team development, currently awaiting formal university approval.",
+    subtext: "Faculty response has been positive and formal design team approval is expected",
   },
 
   // External Form Links

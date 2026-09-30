@@ -18,7 +18,6 @@ import { Footer } from './components/Footer';
 import { LoadingScreen } from './components/LoadingScreen';
 import { SectionDivider } from './components/SectionDivider';
 
-
 export default function App() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [activeSection, setActiveSection] = useState<string>('hero');
@@ -117,9 +116,6 @@ export default function App() {
       </AnimatePresence>
 
       <div className="min-h-screen bg-[#191B1F] text-[#F1F0EC] flex flex-col font-sans selection:bg-[#F15A32] selection:text-white">
-        {/* Fixed Scroll Progress Indicator */}
-        <ScrollProgressBar />
-
         {/* Persistent Combined Sticky Header Container */}
         <div className="sticky top-0 z-40 w-full shadow-md">
           {/* Super Top Notice Banner (Provisional Recognition / Under Review) */}
