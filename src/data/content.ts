@@ -110,9 +110,9 @@ export const SITE_CONFIG: SiteConfig = {
   // Provisional / Pending University Status Banner
   provisionalStatusNotice: {
     enabled: true,
-    badge: "Official Status: Under Review",
-    message: "OTAS (Ontario Tech Aerial Systems) is actively operating in its pre-launch planning phase with weekly meetings and team development, currently awaiting formal university approval.",
-    subtext: "Faculty response has been positive and formal design team approval is expected",
+    badge: "Under Review",
+    message: "Pre-launch design team awaiting formal university recognition.",
+    subtext: "Approval in progress",
   },
 
   // External Form Links
@@ -169,7 +169,7 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
       title: "Modular Quadcopter Testbed (scope under definition)",
       status: "Planned / In definition",
       description: "Our first planned technical effort is a modular quadcopter testbed designed to serve as an accessible learning platform for new members and an experimental foundation for future competition aircraft. The detailed mechanical, electrical, and avionics scope is currently being defined.",
-      nextSteps: "Detailed component choices, specifications, and CAD models will be published once team registration and technical requirements are finalized.",
+      nextSteps: "High-level technical specifications and performance benchmarks will be shared once development progresses.",
     },
   },
 
