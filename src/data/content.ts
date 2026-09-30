@@ -112,7 +112,7 @@ export const SITE_CONFIG: SiteConfig = {
     enabled: true,
     badge: "Official Status: Under Review",
     message: "Proposed Design Team awaiting formal university approval.",
-    subtext: "Faculty response has been positive and formal design team approval is expected",
+    subtext: "Faculty response has been positive.",
   },
 
   // External Form Links
