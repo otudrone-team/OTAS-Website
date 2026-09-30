@@ -24,8 +24,8 @@ export const SponsorUsSection: React.FC = () => {
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-8">
         <FadeIn delay={40}>
           <div>
-            <div className="text-xs font-mono text-[#F15A32] uppercase tracking-wider mb-1">
-              Industry & Community Partners
+            <div className="text-xs font-mono text-[#F15A32] uppercase tracking-wider mb-1.5 font-semibold">
+              {sponsorUs.eyebrow}
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-[#F1F0EC] tracking-tight">
               {sponsorUs.heading}
@@ -39,7 +39,7 @@ export const SponsorUsSection: React.FC = () => {
         {/* Value Proposition for Sponsors */}
         <FadeIn delay={120}>
           <div className="p-5 rounded-lg border border-[#444A50] bg-[#22252A] space-y-3">
-            <div className="flex items-center gap-2 text-xs font-mono text-[#F15A32] uppercase tracking-wider">
+            <div className="flex items-center gap-2 text-xs font-mono text-[#F15A32] uppercase tracking-wider font-semibold">
               <Briefcase className="h-4 w-4" />
               <span>Why Support Our Team Now</span>
             </div>

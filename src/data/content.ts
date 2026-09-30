@@ -11,11 +11,13 @@ export interface TeamSectionContent {
     note: string;
   };
   about: {
+    eyebrow: string;
     heading: string;
     paragraphs: string[];
     noProjectsDisclaimer: string;
   };
   competition: {
+    eyebrow: string;
     heading: string;
     whatIsAeac: string;
     roadmap: {
@@ -26,6 +28,7 @@ export interface TeamSectionContent {
     statusNote: string;
   };
   projects: {
+    eyebrow: string;
     heading: string;
     preLaunchDisclaimer: string;
     plannedProject: {
@@ -36,6 +39,7 @@ export interface TeamSectionContent {
     };
   };
   sponsorUs: {
+    eyebrow: string;
     heading: string;
     subheading: string;
     whySponsor: string;
@@ -52,6 +56,7 @@ export interface TeamSectionContent {
     contactPrompt: string;
   };
   getInvolved: {
+    eyebrow: string;
     heading: string;
     invitation: string;
     experienceNote: string;
@@ -63,6 +68,7 @@ export interface TeamSectionContent {
     }[];
   };
   contact: {
+    eyebrow: string;
     heading: string;
     description: string;
     email: string;
@@ -76,7 +82,25 @@ export interface TeamSectionContent {
   };
 }
 
-export const SITE_CONFIG = {
+export interface SiteConfig {
+  teamName: string;
+  shortName: string;
+  university: string;
+  location: string;
+  contactEmail: string;
+  provisionalStatusNotice: {
+    enabled: boolean;
+    badge: string;
+    message: string;
+    subtext?: string;
+  };
+  externalForms: {
+    studentApplicationUrl: string;
+    sponsorInquiryUrl: string;
+  };
+}
+
+export const SITE_CONFIG: SiteConfig = {
   teamName: "OTAS | Ontario Tech Aerial Systems",
   shortName: "OTAS",
   university: "Ontario Tech University",
@@ -107,6 +131,7 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
   },
 
   about: {
+    eyebrow: "Our Mission & Origins",
     heading: "About the Team",
     paragraphs: [
       "Ontario Tech Aerial Systems (OTAS) is an engineering design team founded to give Ontario Tech students practical, cross-disciplinary experience designing, assembling, and programming unmanned aerial systems.",
@@ -118,7 +143,8 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
   },
 
   competition: {
-    heading: "Competition / AEAC",
+    eyebrow: "National Collegiate Challenge",
+    heading: "Competition & AEAC",
     whatIsAeac: "The Aerial Evolution Association of Canada (AEAC) National Student UAS Competition is Canada's premier collegiate drone challenge, tasking student teams with solving realistic aerial operations such as autonomous waypoint navigation, sensor payload integration, and target reconnaissance.",
     roadmap: [
       {
@@ -136,7 +162,8 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
   },
 
   projects: {
-    heading: "Projects",
+    eyebrow: "Technical Development",
+    heading: "Current Engineering Projects",
     preLaunchDisclaimer: "We are in the pre-launch phase and do not yet have completed projects.",
     plannedProject: {
       title: "Modular Quadcopter Testbed (scope under definition)",
@@ -147,7 +174,8 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
   },
 
   sponsorUs: {
-    heading: "Sponsor Us",
+    eyebrow: "Industry & Community Partners",
+    heading: "Sponsor Our Team",
     subheading: "Partner with Ontario Tech engineering students building collegiate aerial robotics capabilities from the ground up.",
     whySponsor: "As a newly forming engineering design initiative, early sponsor backing directly equips student engineers with fundamental hardware, benchtop safety tools, and testing components. Sponsoring our team gives industry partners direct visibility among motivated students in mechanical, electrical, software, and mechatronics engineering.",
     currentNeedsHeading: "Foundational Hardware & Resource Needs",
@@ -188,7 +216,8 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
   },
 
   getInvolved: {
-    heading: "Get Involved",
+    eyebrow: "Students & New Recruits",
+    heading: "Get Involved with OTAS",
     invitation: "We invite Ontario Tech students from any program or academic year to get involved in shaping the team from day one.",
     experienceNote: "No prior drone, robotics, or aerospace experience is required. We are building this team so students can learn these skills together through guided, practical projects.",
     departmentsHeading: "Team Departments",
@@ -227,7 +256,8 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
   },
 
   contact: {
-    heading: "Contact",
+    eyebrow: "Get in Touch",
+    heading: "Contact the Team",
     description: "Interested in sponsoring, joining, or connecting with the student organizers? Reach out through any of the channels below.",
     email: "otudrone@gmail.com",
     location: "Ontario Tech University, Oshawa, Ontario, Canada",

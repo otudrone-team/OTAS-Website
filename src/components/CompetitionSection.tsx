@@ -11,8 +11,8 @@ export const CompetitionSection: React.FC = () => {
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-8">
         <FadeIn delay={40}>
           <div>
-            <div className="text-xs font-mono text-[#F15A32] uppercase tracking-wider mb-1">
-              Section 03
+            <div className="text-xs font-mono text-[#F15A32] uppercase tracking-wider mb-1.5 font-semibold">
+              {competition.eyebrow}
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-[#F1F0EC] tracking-tight">
               {competition.heading}
