@@ -117,7 +117,7 @@ export const SponsorUsSection: React.FC = () => {
                 className="flex items-center gap-2 px-5 py-2.5 text-xs sm:text-sm font-semibold text-[#191B1F] bg-[#F15A32] hover:bg-[#FF7045] rounded-md transition-colors"
               >
                 <Mail className="h-4 w-4" />
-                <span>Contact Organizer directly</span>
+                <span>Contact Organizer Directly</span>
               </a>
               <span className="text-xs font-mono text-[#979C9F]">
                 {SITE_CONFIG.contactEmail}

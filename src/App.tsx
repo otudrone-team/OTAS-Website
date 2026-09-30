@@ -28,7 +28,8 @@ export default function App() {
 
     const element = document.getElementById(sectionId);
     if (element) {
-      const navOffset = 64;
+      // Account for combined sticky header (StatusBanner ~40px + Navbar 64px + buffer)
+      const navOffset = 108;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - navOffset;
       window.scrollTo({
@@ -42,7 +43,7 @@ export default function App() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['hero', 'about', 'competition', 'projects', 'sponsor-us', 'get-involved', 'contact'];
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + 130;
 
       for (const section of sections) {
         if (section === 'hero' && window.scrollY < 300) {
@@ -67,14 +68,17 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#191B1F] text-[#F1F0EC] flex flex-col font-sans selection:bg-[#F15A32] selection:text-white">
-      {/* Super Top Notice Banner (Provisional Recognition / Under Review) */}
-      <StatusBanner />
+      {/* Persistent Combined Sticky Header Container */}
+      <div className="sticky top-0 z-50 w-full shadow-md">
+        {/* Super Top Notice Banner (Provisional Recognition / Under Review) */}
+        <StatusBanner />
 
-      {/* Top Bar Navigation */}
-      <Navbar
-        activeSection={activeSection}
-        onNavigate={handleNavigate}
-      />
+        {/* Top Bar Navigation */}
+        <Navbar
+          activeSection={activeSection}
+          onNavigate={handleNavigate}
+        />
+      </div>
 
       {/* Main Page Content */}
       <main className="flex-1">

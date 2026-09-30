@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowUpRight, Handshake } from 'lucide-react';
 import { SITE_CONFIG } from '../data/content';
 import { OtasLogo } from './OtasLogo';
@@ -30,7 +30,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[#3D4349] bg-[#5E666E] shadow-sm">
+    <header className="w-full border-b border-[#3D4349] bg-[#5E666E] shadow-sm">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Brand Zone */}
         <button
@@ -58,79 +58,65 @@ export const Navbar: React.FC<NavbarProps> = ({
                     ? 'text-[#F1F0EC] font-semibold'
                     : isSponsor
                     ? 'text-[#F15A32] font-bold hover:text-white'
-                    : 'text-[#E2E4E2] hover:text-[#F15A32]'
+                    : 'text-[#E2E4E2] hover:text-white'
                 }`}
               >
                 {link.label}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 h-0.5 w-full bg-[#F15A32] rounded-full" />
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#F15A32]" />
                 )}
               </button>
             );
           })}
         </nav>
 
-        {/* Primary Action Group: Sponsor Us & Student Application */}
-        <div className="hidden sm:flex items-center gap-2.5">
+        {/* Quick CTA - Sponsor Us direct action */}
+        <div className="hidden lg:flex items-center gap-3">
           <button
             onClick={() => handleLinkClick('sponsor-us')}
-            className="flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-[#191B1F] bg-[#F15A32] hover:bg-[#FF7045] rounded-md transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#191B1F] bg-[#F15A32] hover:bg-[#FF7045] rounded transition-colors cursor-pointer"
           >
             <Handshake className="h-3.5 w-3.5" />
-            <span>Sponsor Us</span>
-          </button>
-          <button
-            onClick={() => handleLinkClick('get-involved')}
-            className="flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-[#F1F0EC] bg-[#3D4349] hover:bg-[#4E565E] rounded-md transition-colors cursor-pointer font-mono"
-          >
-            <span>Apply</span>
-            <ArrowUpRight className="h-3 w-3" />
+            <span>Sponsor</span>
           </button>
         </div>
 
-        {/* Mobile menu trigger */}
+        {/* Mobile Menu Button */}
         <div className="flex md:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-[#191B1F] hover:text-[#081D32] focus:outline-none"
-            aria-label="Toggle menu"
+            className="p-2 text-[#E2E4E2] hover:text-white focus:outline-none cursor-pointer"
+            aria-label="Toggle navigation menu"
           >
-            {mobileMenuOpen ? <X className="h-5 w-5 stroke-[2.5]" /> : <Menu className="h-5 w-5 stroke-[2.5]" />}
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-[#3D4349] bg-[#5E666E] px-4 pt-3 pb-6 space-y-2">
-          <nav className="flex flex-col space-y-1">
-            {navLinks.map((link) => (
-              <button
-                key={link.id}
-                onClick={() => handleLinkClick(link.id)}
-                className={`text-left px-3 py-2 text-sm rounded-md transition-colors font-mono ${
-                  activeSection === link.id
-                    ? 'bg-[#3D4349] text-[#F1F0EC] font-semibold'
-                    : 'text-[#F1F0EC] hover:bg-[#4E565E] hover:text-[#FF7045]'
-                }`}
-              >
-                {link.label}
-              </button>
-            ))}
-          </nav>
-          <div className="pt-3 border-t border-[#3D4349] flex flex-col gap-2">
+        <div className="md:hidden border-t border-[#3D4349] bg-[#5E666E] px-4 pt-2 pb-4 space-y-1 shadow-lg">
+          {navLinks.map((link) => (
+            <button
+              key={link.id}
+              onClick={() => handleLinkClick(link.id)}
+              className={`block w-full text-left px-3 py-2 rounded text-xs uppercase font-mono tracking-wider transition-colors cursor-pointer ${
+                activeSection === link.id
+                  ? 'bg-[#2B2E33] text-[#F15A32] font-semibold'
+                  : 'text-[#E2E4E2] hover:bg-[#2B2E33] hover:text-white'
+              }`}
+            >
+              {link.label}
+            </button>
+          ))}
+
+          <div className="pt-2 border-t border-[#3D4349] mt-2">
             <button
               onClick={() => handleLinkClick('sponsor-us')}
-              className="w-full py-2 text-center text-xs font-semibold text-[#191B1F] bg-[#F15A32] hover:bg-[#FF7045] rounded-md transition-colors flex items-center justify-center gap-1.5"
+              className="w-full flex items-center justify-center gap-1.5 px-4 py-2 text-xs font-semibold text-[#191B1F] bg-[#F15A32] hover:bg-[#FF7045] rounded transition-colors"
             >
               <Handshake className="h-3.5 w-3.5" />
-              <span>Sponsor Us</span>
-            </button>
-            <button
-              onClick={() => handleLinkClick('get-involved')}
-              className="w-full py-2 text-center text-xs font-medium text-[#F1F0EC] bg-[#3D4349] hover:bg-[#4E565E] rounded-md transition-colors"
-            >
-              Student Application Form
+              <span>Sponsor OTAS</span>
             </button>
           </div>
         </div>
