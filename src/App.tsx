@@ -17,7 +17,7 @@ import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { LoadingScreen } from './components/LoadingScreen';
 import { SectionDivider } from './components/SectionDivider';
-import { ScrollProgressBar } from './components/ScrollProgressBar';
+
 
 export default function App() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
