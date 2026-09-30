@@ -135,7 +135,7 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
     heading: "About the Team",
     paragraphs: [
       "Ontario Tech Aerial Systems (OTAS) is an engineering design team founded to give Ontario Tech students practical, cross-disciplinary experience designing, assembling, and programming unmanned aerial systems.",
-      "We are actively operating in our pre-launch planning phase—hosting weekly team meetings, assembling core documentation, and structuring foundational workflows. University faculty have responded positively to our initial proposal, and formal design team recognition is expected as we finalize administrative review.",
+      "We are actively operating in our pre-launch planning phase - hosting weekly team meetings, assembling core documentation, and structuring foundational workflows. University faculty have responded positively to our initial proposal, and formal design team recognition is expected as we finalize administrative review.",
       "Our long-term milestone is to design, manufacture, and fly an autonomous competition aircraft at the annual Aerial Evolution Association of Canada (AEAC) National Student UAS Competition.",
       "During our first year, our focus is grounded and educational: building core UAV fundamentals, establishing team workflows, and creating a reliable modular quadcopter testbed rather than rushing into complex airframes.",
     ],
