@@ -1,0 +1,6 @@
+{
+  "name": "Ontario Tech Aerial Systems",
+  "description": "Collegiate aerospace engineering and autonomous UAV design team at Ontario Tech University.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

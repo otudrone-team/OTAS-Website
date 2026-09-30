@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Official OTAS Brand Palette */
+  --color-otas-bg: #191B1F;
+  --color-otas-surface: #22252A;
+  --color-otas-elevated: #2B2E33;
+  --color-otas-header: #5E666E;
+  --color-otas-divider: #3D4349;
+  --color-otas-border: #444A50;
+  --color-otas-text: #F1F0EC;
+  --color-otas-secondary: #C4C6C5;
+  --color-otas-muted: #979C9F;
+  --color-otas-orange: #F15A32;
+  --color-otas-orange-hover: #FF7045;
+  --color-otas-blue: #2E78B7;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #191B1F;
+    color: #F1F0EC;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    color: #F1F0EC;
+  }
+}
