@@ -111,7 +111,7 @@ export const SITE_CONFIG: SiteConfig = {
   provisionalStatusNotice: {
     enabled: true,
     badge: "Official Status: Under Review",
-    message: "OTAS (Ontario Tech Aerial Systems) is actively operating in its pre-launch planning phase with weekly meetings and team development, currently awaiting formal university approval.",
+    message: "Proposed Design Team awaiting formal university approval.",
     subtext: "Faculty response has been positive and formal design team approval is expected",
   },
 
