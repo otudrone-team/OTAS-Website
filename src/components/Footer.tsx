@@ -70,9 +70,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div>
             Operating in pre-launch planning phase at Ontario Tech University. Formal engineering design team recognition under administrative review.
           </div>
-          <div>
-            Contact: <a href={`mailto:${SITE_CONFIG.contactEmail}`} className="text-[#F15A32] hover:underline font-mono">{SITE_CONFIG.contactEmail}</a>
-          </div>
         </div>
       </div>
     </footer>

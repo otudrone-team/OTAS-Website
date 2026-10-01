@@ -75,16 +75,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           })}
         </nav>
 
-        {/* Quick CTA - Sponsor Us direct action */}
-        <div className="hidden lg:flex items-center gap-3">
-          <button
-            onClick={() => handleLinkClick('sponsor-us')}
-            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#191B1F] bg-[#F15A32] hover:bg-[#FF7045] rounded transition-colors cursor-pointer"
-          >
-            <Handshake className="h-3.5 w-3.5" />
-            <span>Sponsor</span>
-          </button>
-        </div>
+       
 
         {/* Mobile Menu Button */}
         <div className="flex md:hidden">

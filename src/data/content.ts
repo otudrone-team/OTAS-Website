@@ -117,7 +117,7 @@ export const SITE_CONFIG: SiteConfig = {
 
   // External Form Links
   externalForms: {
-    studentApplicationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSc_OTAS_Sample_Intake/viewform",
+    studentApplicationUrl: "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=4aDMUVotG02qmt2qp4ruwo-2n_UZr7VOlcJUsk7Kfn5UNFoxTk5MM1NJQUpHWjlaODNVWU05VFEzQy4u",
     sponsorInquiryUrl: "mailto:otudrone@gmail.com?subject=Sponsorship%20Inquiry%20-%20Ontario%20Tech%20Aerial%20Systems",
   },
 };
