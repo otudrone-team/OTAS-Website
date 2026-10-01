@@ -101,7 +101,7 @@ export const GetInvolvedSection: React.FC = () => {
               <span>Ready to Join Our Organizing Cohort?</span>
             </div>
             <p className="text-xs text-[#C4C6C5]">
-              We welcome motivated Ontario Tech students across all academic years and engineering disciplines.
+              We welcome motivated Ontario Tech students across all academic years and disciplines.
             </p>
           </div>
 
