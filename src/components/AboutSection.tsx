@@ -28,12 +28,6 @@ export const AboutSection: React.FC = () => {
             <p key={idx}>{p}</p>
           ))}
         </div>
-
-        {/* Explicit Honest Disclaimer */}
-        <div className="mt-6 p-4 rounded-lg border border-[#444A50] bg-[#22252A] flex items-center gap-3 text-xs sm:text-sm font-mono text-[#F1F0EC]">
-          <AlertCircle className="h-4 w-4 text-[#F15A32] shrink-0" />
-          <span>{about.noProjectsDisclaimer}</span>
-        </div>
       </motion.div>
     </section>
   );
