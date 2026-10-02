@@ -263,6 +263,12 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
     location: "Ontario Tech University, Oshawa, Ontario, Canada",
     socials: [
       {
+        name: "Email",
+        handle: "otudrone@gmail.com",
+        description: "Direct sponsorship and student inquiry inbox",
+        url: "mailto:otudrone@gmail.com",
+      },
+      {
         name: "Instagram",
         handle: "@ontariotechdrone",
         description: "Official team announcements & build updates",
@@ -273,12 +279,6 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
         handle: "Ontario Tech Aerial Systems",
         description: "Professional updates, partnerships & industry outreach",
         url: "https://www.linkedin.com/company/ontario-tech-aerial-systems",
-      },
-      {
-        name: "Email",
-        handle: "otudrone@gmail.com",
-        description: "Direct sponsorship and student inquiry inbox",
-        url: "mailto:otudrone@gmail.com",
       },
     ],
   },

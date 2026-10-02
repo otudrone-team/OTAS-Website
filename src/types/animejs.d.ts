@@ -1,6 +1,6 @@
 declare module 'animejs' {
   export interface AnimeTimelineInstance {
-    add(params: any): AnimeTimelineInstance;
+    add(params: any, timelineOffset?: number | string): AnimeTimelineInstance;
     play(): void;
     pause(): void;
     restart(): void;
@@ -24,6 +24,7 @@ declare module 'animejs' {
     function timeline(params?: any): AnimeTimelineInstance;
     function remove(targets: any): void;
     function stagger(value: number | [number, number], options?: any): (el: any, i: number, total: number) => number;
+    function setDashoffset(el: any): number;
   }
 
   export default anime;

@@ -24,11 +24,11 @@ export default function App() {
   const isProgrammaticScroll = useRef<boolean>(false);
   const scrollTimeout = useRef<number | null>(null);
 
-  // Initialize and simulate brief load sequence to display the OTAS loading icon
+  // Initialize and simulate load sequence to display the OTAS draw-in animation
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 700);
+    }, 1600);
     return () => clearTimeout(timer);
   }, []);
 
