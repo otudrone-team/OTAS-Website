@@ -24,8 +24,17 @@ export const Navbar: React.FC<NavbarProps> = ({
   ];
 
   const handleLinkClick = (id: string) => {
-    onNavigate(id);
-    setMobileMenuOpen(false);
+    if (mobileMenuOpen) {
+      setMobileMenuOpen(false);
+      // Wait for the mobile drawer DOM removal before calculating scroll position
+      window.requestAnimationFrame(() => {
+        setTimeout(() => {
+          onNavigate(id);
+        }, 20);
+      });
+    } else {
+      onNavigate(id);
+    }
   };
 
   return (

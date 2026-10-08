@@ -52,12 +52,17 @@ export default function App() {
 
     const element = document.getElementById(sectionId);
     if (element) {
-      // Account for sticky navbar (Navbar 64px + small buffer)
-      const navOffset = 72;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navOffset;
+      // Dynamically measure the sticky header height or fall back to 64px
+      const headerElement = document.querySelector('.sticky');
+      const headerHeight = headerElement ? headerElement.getBoundingClientRect().height : 64;
+      
+      // Calculate target position with comfortable breathing room below sticky nav
+      const elementRect = element.getBoundingClientRect();
+      const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+      const targetTop = elementRect.top + currentScrollY - headerHeight - 12;
+
       window.scrollTo({
-        top: offsetPosition,
+        top: Math.max(0, targetTop),
         behavior: 'smooth',
       });
     }
