@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { WEBSITE_CONTENT } from '../data/content';
 import { OtasIcon } from './OtasIcon';
-import { ArrowRight, Compass, Handshake } from 'lucide-react';
+import { ArrowRight, Handshake } from 'lucide-react';
 import HeroDrone from './HeroDrone';
 
 interface HeroProps {
@@ -58,12 +58,6 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             <p className="text-base sm:text-lg text-[#C4C6C5] leading-relaxed">
               {hero.subheading}
             </p>
-
-            {/* Current status note */}
-            <div className="p-3.5 rounded-lg border border-[#444A50] bg-[#22252A] flex items-start sm:items-center gap-3 text-xs text-[#C4C6C5]">
-              <Compass className="h-4 w-4 text-[#F15A32] shrink-0 mt-0.5 sm:mt-0" />
-              <span>{hero.note}</span>
-            </div>
 
             {/* Action Buttons for Sponsors and Students */}
             <div className="pt-2 flex flex-wrap items-center gap-3 sm:gap-4">

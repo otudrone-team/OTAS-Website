@@ -52,8 +52,8 @@ export default function App() {
 
     const element = document.getElementById(sectionId);
     if (element) {
-      // Account for combined sticky header (StatusBanner ~40px + Navbar 64px + buffer)
-      const navOffset = 108;
+      // Account for sticky navbar (Navbar 64px + small buffer)
+      const navOffset = 72;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - navOffset;
       window.scrollTo({

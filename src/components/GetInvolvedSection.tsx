@@ -17,23 +17,23 @@ import { SectionSubheading } from './SectionSubheading';
 export const GetInvolvedSection: React.FC = () => {
   const { getInvolved } = WEBSITE_CONTENT;
 
-  // Department icon mapping
+  // Department icon mapping - all departments styled with the consistent blue accent (#2E78B7)
   const getDepartmentIcon = (name: string) => {
     switch (name) {
       case 'Avionics':
-        return <Cpu className="h-4 w-4 text-[#F15A32]" />;
+        return <Cpu className="h-4 w-4 text-[#2E78B7]" />;
       case 'Payload':
         return <Package className="h-4 w-4 text-[#2E78B7]" />;
       case 'Mechanical':
-        return <Wrench className="h-4 w-4 text-[#F15A32]" />;
+        return <Wrench className="h-4 w-4 text-[#2E78B7]" />;
       case 'Software and Autonomy':
         return <Code2 className="h-4 w-4 text-[#2E78B7]" />;
       case 'Media and Outreach':
-        return <Megaphone className="h-4 w-4 text-[#F15A32]" />;
+        return <Megaphone className="h-4 w-4 text-[#2E78B7]" />;
       case 'Finance':
-        return <Coins className="h-4 w-4 text-[#F15A32]" />;
+        return <Coins className="h-4 w-4 text-[#2E78B7]" />;
       default:
-        return <Wrench className="h-4 w-4 text-[#F15A32]" />;
+        return <Wrench className="h-4 w-4 text-[#2E78B7]" />;
     }
   };
 

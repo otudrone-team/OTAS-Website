@@ -68,7 +68,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
         <div className="mt-8 pt-4 border-t border-[#444A50] text-[11px] text-[#C4C6C5] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
           <div>
-            Operating in pre-launch planning phase at Ontario Tech University. Formal engineering design team recognition under administrative review.
+            Student engineering design team at Ontario Tech University. Faculty of Engineering and Applied Science.
           </div>
         </div>
       </div>

@@ -2,7 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { WEBSITE_CONTENT } from '../data/content';
 import { SectionSubheading } from './SectionSubheading';
-import teamPhoto from '../assets/images/team_picture.jpg';
+import teamPhotoWebp from '../assets/images/team_picture.webp';
+import teamPhotoJpg from '../assets/images/team_picture.jpg';
 
 export const AboutSection: React.FC = () => {
   const { about } = WEBSITE_CONTENT;
@@ -28,14 +29,17 @@ export const AboutSection: React.FC = () => {
           className="relative rounded-xl overflow-hidden border border-[#444A50] bg-[#22252A] shadow-xl select-none"
           onContextMenu={(e) => e.preventDefault()}
         >
-          <img
-            src={teamPhoto}
-            alt="Ontario Tech Aerial Systems Team"
-            loading="lazy"
-            decoding="async"
-            draggable={false}
-            className="w-full h-auto max-h-[520px] object-cover object-center pointer-events-none select-none"
-          />
+          <picture>
+            <source srcSet={teamPhotoWebp} type="image/webp" />
+            <img
+              src={teamPhotoJpg}
+              alt="Ontario Tech Aerial Systems Team"
+              loading="lazy"
+              decoding="async"
+              draggable={false}
+              className="w-full h-auto max-h-[520px] object-cover object-center pointer-events-none select-none"
+            />
+          </picture>
 
           {/* Transparent protection shield layer prevents direct right-click or drag-to-desktop */}
           <div

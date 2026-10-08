@@ -8,7 +8,7 @@ export interface TeamSectionContent {
     teamName: string;
     headline: string;
     subheading: string;
-    note: string;
+    note?: string;
   };
   about: {
     eyebrow: string;
@@ -107,12 +107,12 @@ export const SITE_CONFIG: SiteConfig = {
   location: "Ontario Tech University, Oshawa, Ontario, Canada",
   contactEmail: "otudrone@gmail.com",
 
-  // Provisional / Pending University Status Banner
+  // Provisional / Pending University Status Banner (kept configurable, disabled by default)
   provisionalStatusNotice: {
-    enabled: true,
-    badge: "Official Status: Under Review",
-    message: "Proposed Design Team awaiting formal university approval.",
-    subtext: "Faculty response has been positive.",
+    enabled: false,
+    badge: "Official Status: Recognized",
+    message: "Recognized Engineering Design Team at Ontario Tech University.",
+    subtext: "Faculty of Engineering and Applied Science",
   },
 
   // External Form Links
@@ -126,16 +126,15 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
   hero: {
     teamName: "OTAS | Ontario Tech Aerial Systems",
     headline: "Building hands-on aerial systems experience from the ground up at Ontario Tech.",
-    subheading: "We are a newly forming student design team at Ontario Tech University working toward competing in the Aerial Evolution Association of Canada (AEAC) National Student UAS Competition. Our initial focus is developing a modular quadcopter testbed as a hands-on training platform for new members.",
-    note: "Actively operating in planning & team setup with weekly meetings. Official university approval is expected following positive faculty response.",
+    subheading: "We are a student engineering design team at Ontario Tech University working toward competing in the Aerial Evolution Association of Canada (AEAC) National Student UAS Competition. Our initial focus is developing a modular quadcopter testbed as a hands-on training platform for members.",
   },
 
   about: {
     eyebrow: "Our Mission & Origins",
     heading: "About the Team",
     paragraphs: [
-      "Ontario Tech Aerial Systems (OTAS) is an engineering design team founded to give Ontario Tech students practical, cross-disciplinary experience designing, assembling, and programming unmanned aerial systems.",
-      "We are actively operating in our pre-launch planning phase - hosting weekly team meetings, assembling core documentation, and structuring foundational workflows. University faculty have responded positively to our initial proposal, and formal design team recognition is expected as we finalize administrative review.",
+      "Ontario Tech Aerial Systems (OTAS) is a student engineering design team founded to give Ontario Tech students practical, cross-disciplinary experience designing, assembling, and programming unmanned aerial systems.",
+      "We operate with weekly team meetings, structured technical sub-teams, and hands-on laboratory workshops. Our team provides students with real-world aerospace engineering and UAS development experience.",
       "Our long-term milestone is to design, manufacture, and fly an autonomous competition aircraft at the annual Aerial Evolution Association of Canada (AEAC) National Student UAS Competition.",
       "During our first year, our focus is grounded and educational: building core UAV fundamentals, establishing team workflows, and creating a reliable modular quadcopter testbed rather than rushing into complex airframes.",
     ],
@@ -164,10 +163,10 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
   projects: {
     eyebrow: "Technical Development",
     heading: "Current Engineering Projects",
-    preLaunchDisclaimer: "We are in the pre-launch phase and do not yet have completed projects.",
+    preLaunchDisclaimer: "Our inaugural engineering projects are actively underway in development and testing.",
     plannedProject: {
       title: "Modular Quadcopter Testbed (scope under definition)",
-      status: "Planned / In definition",
+      status: "In Development",
       description: "Our first planned technical effort is a modular quadcopter testbed designed to serve as an accessible learning platform for new members and an experimental foundation for future competition aircraft. The detailed mechanical, electrical, and avionics scope is currently being defined.",
       nextSteps: "High-level technical specifications and performance benchmarks will be shared once development progresses.",
     },
@@ -177,7 +176,7 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
     eyebrow: "Industry & Community Partners",
     heading: "Sponsor Our Team",
     subheading: "Partner with Ontario Tech engineering students building collegiate aerial robotics capabilities from the ground up.",
-    whySponsor: "As a newly forming engineering design initiative, early sponsor backing directly equips student engineers with fundamental hardware, benchtop safety tools, and testing components. Sponsoring our team gives industry partners direct visibility among motivated students in mechanical, electrical, software, and mechatronics engineering.",
+    whySponsor: "As an engineering design team at Ontario Tech University, sponsor backing directly equips student engineers with fundamental hardware, benchtop safety tools, and testing components. Sponsoring our team gives industry partners direct visibility among motivated students in mechanical, electrical, software, and mechatronics engineering.",
     currentNeedsHeading: "Foundational Hardware & Resource Needs",
     currentNeeds: [
       {

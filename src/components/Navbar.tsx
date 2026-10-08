@@ -39,7 +39,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         >
           <OtasLogo className="h-8 sm:h-9 w-auto" />
           <span className="hidden sm:inline font-mono text-xs text-[#E2E4E2] font-semibold border-l border-[#444A50] pl-2.5">
-            Pre-Launch
+            Student Engineering Design Team
           </span>
         </button>
 
