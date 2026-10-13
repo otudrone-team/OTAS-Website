@@ -14,7 +14,7 @@ export interface TeamSectionContent {
     eyebrow: string;
     heading: string;
     paragraphs: string[];
-    noProjectsDisclaimer: string;
+    noProjectsDisclaimer?: string;
   };
   competition: {
     eyebrow: string;
@@ -25,7 +25,7 @@ export interface TeamSectionContent {
       title: string;
       description: string;
     }[];
-    statusNote: string;
+    statusNote?: string;
   };
   projects: {
     eyebrow: string;
@@ -126,7 +126,7 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
   hero: {
     teamName: "OTAS | Ontario Tech Aerial Systems",
     headline: "Building hands-on aerial systems experience from the ground up at Ontario Tech.",
-    subheading: "We are a student engineering design team at Ontario Tech University working toward competing in the Aerial Evolution Association of Canada (AEAC) National Student UAS Competition. Our initial focus is developing a modular quadcopter testbed as a hands-on training platform for members.",
+    subheading: "We are a student engineering design team at Ontario Tech University preparing to compete in the Aerial Evolution Association of Canada (AEAC) National Student UAS Competition. Our current focus is designing and building a modular quadcopter testbed for flight testing and member training.",
   },
 
   about: {
@@ -134,11 +134,9 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
     heading: "About the Team",
     paragraphs: [
       "Ontario Tech Aerial Systems (OTAS) is a student engineering design team founded to give Ontario Tech students practical, cross-disciplinary experience designing, assembling, and programming unmanned aerial systems.",
-      "We operate with weekly team meetings, structured technical sub-teams, and hands-on laboratory workshops. Our team provides students with real-world aerospace engineering and UAS development experience.",
       "Our long-term milestone is to design, manufacture, and fly an autonomous competition aircraft at the annual Aerial Evolution Association of Canada (AEAC) National Student UAS Competition.",
-      "During our first year, our focus is grounded and educational: building core UAV fundamentals, establishing team workflows, and creating a reliable modular quadcopter testbed rather than rushing into complex airframes.",
+      "During our first year, our focus is on building our team, establishing our workflows, and creating a reliable modular quadcopter.",
     ],
-    noProjectsDisclaimer: "We do not yet have completed projects to showcase.",
   },
 
   competition: {
@@ -149,7 +147,7 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
       {
         phase: "Year 1",
         title: "Learning & Quadcopter Testbed",
-        description: "Establish hands-on workshops in airframe assembly, flight controller configuration, and safety procedures while building our modular testbed.",
+        description: "Run hands-on workshops in airframe assembly, flight controller configuration, and safety procedures while building our modular testbed.",
       },
       {
         phase: "Year 2+",
@@ -157,7 +155,6 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
         description: "Apply testbed flight data and acquired design experience to engineer our mission-specific aircraft and travel to compete directly at the national AEAC competition.",
       },
     ],
-    statusNote: "We are currently laying the operational groundwork and technical roadmap in preparation for future AEAC competition cycles.",
   },
 
   projects: {
@@ -165,10 +162,10 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
     heading: "Current Engineering Projects",
     preLaunchDisclaimer: "Our inaugural engineering projects are actively underway in development and testing.",
     plannedProject: {
-      title: "Modular Quadcopter Testbed (scope under definition)",
+      title: "Modular Quadcopter Testbed",
       status: "In Development",
-      description: "Our first planned technical effort is a modular quadcopter testbed designed to serve as an accessible learning platform for new members and an experimental foundation for future competition aircraft. The detailed mechanical, electrical, and avionics scope is currently being defined.",
-      nextSteps: "High-level technical specifications and performance benchmarks will be shared once development progresses.",
+      description: "Our primary technical project is a modular quadcopter testbed designed to serve as an accessible learning platform for new members and a test bench for future competition aircraft. Sub-teams are currently finalizing component selection across mechanical mounts, avionics wiring, and flight software.",
+      nextSteps: "Detailed build specs and flight test updates will be shared as bench testing begins.",
     },
   },
 
@@ -199,16 +196,16 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
     whatWeOfferHeading: "What We Offer Partners",
     whatWeOffer: [
       {
-        title: "Transparent & Grounded Collaboration",
-        description: "Regular technical progress updates showing exactly how contributed equipment or funding is utilized on our testbed.",
+        title: "Clear Project Updates",
+        description: "Regular technical progress reports showing exactly how sponsor funding and equipment are used on our testbed.",
       },
       {
         title: "Brand Visibility",
-        description: "Prominent logo placement on our physical testbed airframe, website, team communications, and documentation.",
+        description: "Logo placement on our physical testbed airframe, team apparel, website, and technical reports.",
       },
       {
         title: "Talent Engagement",
-        description: "Direct connection with hands-on Ontario Tech students actively building practical aerospace and autonomous systems skills.",
+        description: "Direct connection with motivated Ontario Tech students building practical aerospace, avionics, and software experience.",
       },
     ],
     contactPrompt: "We welcome financial contributions, hardware donations, tooling, and mentorship. If your organization is interested in discussing partnership opportunities, please get in touch.",
@@ -257,7 +254,7 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
   contact: {
     eyebrow: "Get in Touch",
     heading: "Contact the Team",
-    description: "Interested in sponsoring, joining, or connecting with the student organizers? Reach out through any of the channels below.",
+    description: "Interested in sponsoring, joining, or connecting with the student team? Reach out through any of the channels below.",
     email: "otudrone@gmail.com",
     location: "Ontario Tech University, Oshawa, Ontario, Canada",
     socials: [

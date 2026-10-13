@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { WEBSITE_CONTENT } from '../data/content';
-import { Flag, Milestone, ShieldCheck } from 'lucide-react';
+import { Flag, Milestone } from 'lucide-react';
 import { SectionSubheading } from './SectionSubheading';
 
 export const CompetitionSection: React.FC = () => {
@@ -59,12 +59,6 @@ export const CompetitionSection: React.FC = () => {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Honest Status Note */}
-        <div className="p-3.5 rounded-lg border border-[#444A50] bg-[#22252A] flex items-center gap-3 text-xs text-[#C4C6C5]">
-          <ShieldCheck className="h-4 w-4 text-[#2E78B7] shrink-0" />
-          <span>{competition.statusNote}</span>
         </div>
       </motion.div>
     </section>

@@ -98,10 +98,10 @@ export const GetInvolvedSection: React.FC = () => {
           <div className="space-y-1">
             <div className="flex items-center gap-2 text-sm font-bold text-[#F1F0EC]">
               <FileText className="h-4 w-4 text-[#F15A32]" />
-              <span>Ready to Join Our Organizing Cohort?</span>
+              <span>Ready to Join the Team?</span>
             </div>
             <p className="text-xs text-[#C4C6C5]">
-              We welcome motivated Ontario Tech students across all academic years and disciplines.
+              We welcome Ontario Tech students from all years and disciplines.
             </p>
           </div>
 
@@ -111,7 +111,7 @@ export const GetInvolvedSection: React.FC = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 text-xs sm:text-sm font-semibold text-[#191B1F] bg-[#F15A32] hover:bg-[#FF7045] rounded-md transition-colors shrink-0"
           >
-            <span>Apply / Register Interest</span>
+            <span>Apply Now</span>
             <ExternalLink className="h-4 w-4" />
           </a>
         </div>

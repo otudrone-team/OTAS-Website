@@ -54,7 +54,7 @@ export const ContactSection: React.FC = () => {
             <SectionSubheading as="h3" className="mb-0">
               Official Team Channels
             </SectionSubheading>
-            <span className="text-[11px] font-mono text-[#979C9F]">Connect with our organizers</span>
+            <span className="text-[11px] font-mono text-[#979C9F]">Connect with the team</span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 items-stretch">
