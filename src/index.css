@@ -23,6 +23,7 @@
 @layer base {
   html {
     scroll-padding-top: 5rem;
+    caret-color: transparent;
   }
 
   section[id] {
@@ -33,11 +34,26 @@
     font-family: var(--font-sans);
     background-color: #191B1F;
     color: #F1F0EC;
+    cursor: default;
+    caret-color: transparent;
   }
 
+  /* Prevent text cursor/blinking caret on titles, headings, badges, and structural copy */
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
     color: #F1F0EC;
+    cursor: default;
+    caret-color: transparent;
+  }
+
+  p, span, div, li, a, button {
+    caret-color: transparent;
+  }
+
+  /* Only permit visible blinking caret on actual user text inputs and textareas if any exist */
+  input, textarea {
+    caret-color: auto;
+    cursor: text;
   }
 }

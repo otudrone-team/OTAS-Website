@@ -199,7 +199,7 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
       {
         name: "Ground Link Tier",
         range: "$500 – $999",
-        description: "Foundational support backing essential benchtop consumables, test instrumentation, and team operating supplies.",
+        description: "Foundational support strengthening OTAS operations, student development, and early engineering milestones.",
         perks: [
           "Logo and link featured on official OTAS website",
           "Social media welcome and sponsor recognition post",
@@ -210,7 +210,7 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
       {
         name: "Flight Path Tier",
         range: "$1,000 – $2,500",
-        description: "Direct engineering support equipping our modular quadcopter testbed with core avionics, motors, and battery flight packs.",
+        description: "Expanded support accelerating team growth, hands-on learning, and progress toward major technical milestones.",
         perks: [
           "Medium logo placement on our physical testbed airframe",
           "Featured company spotlight across team social channels",
@@ -222,7 +222,7 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
       {
         name: "Mission Partner Tier",
         range: "$2,500+",
-        description: "Flagship partnership empowering full airframe manufacture, competition sensor payloads, and travel to the national AEAC competition.",
+        description: "Flagship partnership powering OTAS through its founding years, highest-impact initiatives, and long-term growth.",
         perks: [
           "Premier large logo on physical competition aircraft & team apparel",
           "Dedicated company recognition in all competition submissions",
@@ -278,7 +278,7 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
   getInvolved: {
     eyebrow: "Students & New Recruits",
     heading: "Get Involved with OTAS",
-    invitation: "We invite Ontario Tech students from any faculty, program, or academic year to join our team. No prior drone, robotics, or aerospace experience is needed—we're here to learn, build, and test together through hands-on technical projects.",
+    invitation: "We invite Ontario Tech students from any faculty, program, or academic year to join our team. No prior drone, robotics, or aerospace experience is needed. We are here to learn, build, and test together through hands-on technical projects.",
     departmentsHeading: "Team Departments",
     departments: [
       {
