@@ -160,7 +160,7 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
   projects: {
     eyebrow: "Technical Development",
     heading: "Current Engineering Projects",
-    preLaunchDisclaimer: "Our inaugural engineering projects are actively underway in development and testing.",
+    preLaunchDisclaimer: "Our initial engineering projects are in development.",
     plannedProject: {
       title: "Modular Quadcopter Testbed",
       status: "In Development",
