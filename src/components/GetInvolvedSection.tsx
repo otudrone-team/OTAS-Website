@@ -2,9 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { WEBSITE_CONTENT, SITE_CONFIG } from '../data/content';
 import {
-  CheckCircle,
   ExternalLink,
-  FileText,
   Cpu,
   Package,
   Wrench,
@@ -17,23 +15,23 @@ import { SectionSubheading } from './SectionSubheading';
 export const GetInvolvedSection: React.FC = () => {
   const { getInvolved } = WEBSITE_CONTENT;
 
-  // Department icon mapping - all departments styled with the consistent blue accent (#2E78B7)
+  // Department icon mapping - all departments styled with Ontario Tech blue (#0077CA)
   const getDepartmentIcon = (name: string) => {
     switch (name) {
       case 'Avionics':
-        return <Cpu className="h-4 w-4 text-[#2E78B7]" />;
+        return <Cpu className="h-4 w-4 text-[#0077CA]" />;
       case 'Payload':
-        return <Package className="h-4 w-4 text-[#2E78B7]" />;
+        return <Package className="h-4 w-4 text-[#0077CA]" />;
       case 'Mechanical':
-        return <Wrench className="h-4 w-4 text-[#2E78B7]" />;
+        return <Wrench className="h-4 w-4 text-[#0077CA]" />;
       case 'Software and Autonomy':
-        return <Code2 className="h-4 w-4 text-[#2E78B7]" />;
+        return <Code2 className="h-4 w-4 text-[#0077CA]" />;
       case 'Media and Outreach':
-        return <Megaphone className="h-4 w-4 text-[#2E78B7]" />;
+        return <Megaphone className="h-4 w-4 text-[#0077CA]" />;
       case 'Finance':
-        return <Coins className="h-4 w-4 text-[#2E78B7]" />;
+        return <Coins className="h-4 w-4 text-[#0077CA]" />;
       default:
-        return <Wrench className="h-4 w-4 text-[#2E78B7]" />;
+        return <Wrench className="h-4 w-4 text-[#0077CA]" />;
     }
   };
 
@@ -51,15 +49,9 @@ export const GetInvolvedSection: React.FC = () => {
           <h2 className="text-2xl sm:text-3xl font-bold text-[#F1F0EC] tracking-tight">
             {getInvolved.heading}
           </h2>
-          <p className="text-sm sm:text-base text-[#C4C6C5] mt-2">
+          <p className="text-sm sm:text-base text-[#C4C6C5] mt-3 leading-relaxed max-w-2xl">
             {getInvolved.invitation}
           </p>
-        </div>
-
-        {/* Experience reassurance callout */}
-        <div className="p-4 rounded-lg border border-[#444A50] bg-[#22252A] flex items-start sm:items-center gap-3 text-xs sm:text-sm text-[#F1F0EC]">
-          <CheckCircle className="h-4 w-4 text-[#F15A32] shrink-0 mt-0.5 sm:mt-0" />
-          <span>{getInvolved.experienceNote}</span>
         </div>
 
         {/* Departments List */}
@@ -96,10 +88,9 @@ export const GetInvolvedSection: React.FC = () => {
         {/* Application Link Banner */}
         <div className="p-6 rounded-xl border border-[#444A50] bg-[#22252A] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="space-y-1">
-            <div className="flex items-center gap-2 text-sm font-bold text-[#F1F0EC]">
-              <FileText className="h-4 w-4 text-[#F15A32]" />
-              <span>Ready to Join the Team?</span>
-            </div>
+            <h3 className="text-base font-bold text-[#F1F0EC]">
+              Ready to Join the Team?
+            </h3>
             <p className="text-xs text-[#C4C6C5]">
               We welcome Ontario Tech students from all years and disciplines.
             </p>

@@ -1,29 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { WEBSITE_CONTENT, SITE_CONFIG } from '../data/content';
-import { Briefcase, CheckCircle2, Mail, Cpu, Hammer, BatteryCharging, Box } from 'lucide-react';
+import {
+  CheckCircle2,
+  Mail,
+  Copy,
+  Check,
+  ExternalLink,
+  ShieldAlert,
+} from 'lucide-react';
 import { SectionSubheading } from './SectionSubheading';
 
 export const SponsorUsSection: React.FC = () => {
   const { sponsorUs } = WEBSITE_CONTENT;
+  const [copied, setCopied] = useState(false);
 
-  const getNeedIcon = (index: number) => {
-    switch (index) {
-      case 0:
-        return <Cpu className="h-4 w-4 text-[#F15A32]" />;
-      case 1:
-        return <Hammer className="h-4 w-4 text-[#F15A32]" />;
-      case 2:
-        return <BatteryCharging className="h-4 w-4 text-[#F15A32]" />;
-      default:
-        return <Box className="h-4 w-4 text-[#F15A32]" />;
-    }
+  const handleCopyEmail = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    navigator.clipboard.writeText(SITE_CONFIG.contactEmail);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2200);
   };
 
   return (
-    <section id="sponsor-us" className="py-16 md:py-20 bg-[#191B1F]">
+    <section id="sponsor-us" className="py-16 md:py-24 bg-[#191B1F]">
       <motion.div
-        className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-8"
+        className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-10"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-50px' }}
@@ -41,37 +44,106 @@ export const SponsorUsSection: React.FC = () => {
 
         {/* Value Proposition for Sponsors */}
         <div className="p-5 rounded-lg border border-[#444A50] bg-[#22252A] space-y-3">
-          <SectionSubheading as="h3" className="flex items-center gap-2 mb-0">
-            <Briefcase className="h-3.5 w-3.5" />
-            <span>Why Support Our Team Now</span>
+          <SectionSubheading as="h3" className="mb-0">
+            Why Support Our Team Now
           </SectionSubheading>
           <p className="text-xs sm:text-sm text-[#C4C6C5] leading-relaxed">
             {sponsorUs.whySponsor}
           </p>
         </div>
 
-        {/* Current Foundational Needs */}
-        <div className="space-y-3">
+        {/* 3-Tier Sponsorship Packages */}
+        <div className="space-y-4">
+          <div className="flex items-center justify-between">
+            <SectionSubheading as="h3" className="mb-0">
+              {sponsorUs.tiersHeading}
+            </SectionSubheading>
+            <span className="text-[11px] font-mono text-[#979C9F]">
+              Collegiate Partnerships
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
+            {sponsorUs.tiers.map((tier, idx) => (
+              <div
+                key={idx}
+                className="relative flex flex-col justify-between p-5 rounded-xl border border-[#444A50] bg-[#22252A] hover:border-[#5E666E] transition-all"
+              >
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="text-sm font-bold text-[#F1F0EC]">
+                      {tier.name}
+                    </h4>
+                    <div className="text-lg font-extrabold font-mono text-[#F1F0EC] mt-0.5">
+                      {tier.range}
+                    </div>
+                  </div>
+
+                  <p className="text-xs text-[#C4C6C5] leading-relaxed">
+                    {tier.description}
+                  </p>
+
+                  <div className="pt-3 border-t border-[#3D4349] space-y-2">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#979C9F] font-semibold">
+                      Package Inclusions:
+                    </span>
+                    <ul className="space-y-1.5 text-xs text-[#E2E4E2]">
+                      {tier.perks.map((perk, perkIdx) => (
+                        <li key={perkIdx} className="flex items-start gap-2">
+                          <CheckCircle2 className="h-3.5 w-3.5 text-[#0077CA] shrink-0 mt-0.5" />
+                          <span className="leading-tight">{perk}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Condensed Foundational Needs (Split into 2 Modules) */}
+        <div className="space-y-4">
           <SectionSubheading as="h3" className="mb-0">
             {sponsorUs.currentNeedsHeading}
           </SectionSubheading>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {sponsorUs.currentNeeds.map((need, idx) => (
-              <div
-                key={idx}
-                className="h-full p-4 rounded-lg border border-[#444A50] bg-[#22252A] space-y-1.5 hover:border-[#5E666E] transition-colors"
-              >
-                <div className="flex items-center gap-2 text-sm font-semibold text-[#F1F0EC]">
-                  <div className="p-1 rounded bg-[#2B2E33] border border-[#444A50]">
-                    {getNeedIcon(idx)}
-                  </div>
-                  <span>{need.title}</span>
-                </div>
-                <p className="text-xs text-[#C4C6C5] leading-relaxed">
-                  {need.description}
-                </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Monetary Sponsorship Funds */}
+            <div className="p-5 rounded-xl border border-[#444A50] bg-[#22252A] space-y-3 hover:border-[#5E666E] transition-colors">
+              <div className="text-sm font-bold text-[#F1F0EC]">
+                {sponsorUs.needsSplit.monetary.title}
               </div>
-            ))}
+              <p className="text-xs text-[#979C9F]">
+                {sponsorUs.needsSplit.monetary.tagline}
+              </p>
+              <ul className="space-y-2 pt-1 border-t border-[#3D4349] text-xs text-[#C4C6C5]">
+                {sponsorUs.needsSplit.monetary.items.map((item, itemIdx) => (
+                  <li key={itemIdx} className="flex items-start gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#0077CA] shrink-0 mt-1.5" />
+                    <span className="leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* In-Kind Equipment & Resources */}
+            <div className="p-5 rounded-xl border border-[#444A50] bg-[#22252A] space-y-3 hover:border-[#5E666E] transition-colors">
+              <div className="text-sm font-bold text-[#F1F0EC]">
+                {sponsorUs.needsSplit.inKind.title}
+              </div>
+              <p className="text-xs text-[#979C9F]">
+                {sponsorUs.needsSplit.inKind.tagline}
+              </p>
+              <ul className="space-y-2 pt-1 border-t border-[#3D4349] text-xs text-[#C4C6C5]">
+                {sponsorUs.needsSplit.inKind.items.map((item, itemIdx) => (
+                  <li key={itemIdx} className="flex items-start gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#0077CA] shrink-0 mt-1.5" />
+                    <span className="leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -86,9 +158,8 @@ export const SponsorUsSection: React.FC = () => {
                 key={idx}
                 className="h-full p-4 rounded-lg border border-[#444A50] bg-[#22252A] space-y-2 hover:border-[#5E666E] transition-colors"
               >
-                <div className="flex items-center gap-2 text-xs font-bold text-[#F1F0EC]">
-                  <CheckCircle2 className="h-4 w-4 text-[#F15A32] shrink-0" />
-                  <span>{offer.title}</span>
+                <div className="text-xs font-bold text-[#F1F0EC]">
+                  {offer.title}
                 </div>
                 <p className="text-xs text-[#C4C6C5] leading-relaxed">
                   {offer.description}
@@ -98,28 +169,61 @@ export const SponsorUsSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Direct Contact Callout */}
-        <div className="p-6 rounded-xl border border-[#F15A32]/40 bg-[#22252A] space-y-4">
+        {/* Dual Sponsorship Action Callouts */}
+        <div className="p-6 rounded-xl border border-[#F15A32]/50 bg-[#22252A] space-y-5 shadow-lg">
           <div className="space-y-2">
             <SectionSubheading as="h3" className="mb-0">
               Ready to Discuss a Partnership?
             </SectionSubheading>
-            <p className="text-xs sm:text-sm text-[#C4C6C5]">
+            <p className="text-xs sm:text-sm text-[#C4C6C5] leading-relaxed">
               {sponsorUs.contactPrompt}
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+            {/* Option 1: Official University Design Team Portal Link */}
             <a
-              href={`mailto:${SITE_CONFIG.contactEmail}?subject=Sponsorship%20Inquiry%20-%20Ontario%20Tech%20Aerial%20Systems`}
-              className="flex items-center gap-2 px-5 py-2.5 text-xs sm:text-sm font-semibold text-[#191B1F] bg-[#F15A32] hover:bg-[#FF7045] rounded-md transition-colors"
+              href={sponsorUs.officialClubsPortalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-between p-4 rounded-lg bg-[#F15A32] hover:bg-[#FF7045] text-[#191B1F] font-bold text-xs sm:text-sm transition-all group"
             >
-              <Mail className="h-4 w-4" />
-              <span>Get in Touch with Us</span>
+              <div className="flex items-center gap-2.5">
+                <ShieldAlert className="h-4 w-4 shrink-0" />
+                <span>Ready to Sponsor Us? Click Here</span>
+              </div>
+              <ExternalLink className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" />
             </a>
-            <span className="text-xs font-mono text-[#979C9F]">
-              {SITE_CONFIG.contactEmail}
-            </span>
+
+            {/* Option 2: Have Any Questions For OTAS? (Mailto + Quick Copy Email Button) */}
+            <div className="flex items-center rounded-lg bg-[#191B1F] border border-[#444A50] p-1.5 gap-2">
+              <a
+                href={`mailto:${SITE_CONFIG.contactEmail}?subject=Sponsorship%20Inquiry%20-%20Ontario%20Tech%20Aerial%20Systems`}
+                className="flex-1 flex items-center gap-2 px-3 py-2 text-xs font-semibold text-[#F1F0EC] hover:text-[#0077CA] transition-colors truncate"
+              >
+                <Mail className="h-4 w-4 text-[#0077CA] shrink-0" />
+                <span className="truncate">Questions? Email Us</span>
+              </a>
+
+              <button
+                type="button"
+                onClick={handleCopyEmail}
+                title={copied ? 'Copied to clipboard!' : 'Copy email address'}
+                className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-mono font-medium rounded bg-[#2B2E33] hover:bg-[#3D4349] text-[#E2E4E2] transition-colors cursor-pointer shrink-0"
+              >
+                {copied ? (
+                  <>
+                    <Check className="h-3.5 w-3.5 text-emerald-400" />
+                    <span className="text-emerald-400 text-[11px]">Copied</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="h-3.5 w-3.5 text-[#979C9F]" />
+                    <span className="text-[11px]">Copy Email</span>
+                  </>
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </motion.div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { WEBSITE_CONTENT } from '../data/content';
-import { Wrench, Info } from 'lucide-react';
+import { Info } from 'lucide-react';
 import { SectionSubheading } from './SectionSubheading';
 
 export const ProjectsSection: React.FC = () => {
@@ -31,16 +31,11 @@ export const ProjectsSection: React.FC = () => {
 
         {/* Single Planned Placeholder Entry Card */}
         <div className="rounded-xl border border-[#444A50] bg-[#22252A] p-6 space-y-4 hover:border-[#5E666E] transition-colors">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-            <div className="flex items-center gap-2">
-              <div className="p-1.5 rounded bg-[#2B2E33] border border-[#444A50]">
-                <Wrench className="h-4 w-4 text-[#F15A32]" />
-              </div>
-              <h3 className="text-lg font-bold text-[#F1F0EC]">
-                {plannedProject.title}
-              </h3>
-            </div>
-            <span className="inline-flex self-start sm:self-auto font-mono text-[11px] text-[#F15A32] bg-[#2B2E33] px-2.5 py-1 rounded border border-[#444A50]">
+          <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 pb-1 border-b border-[#3D4349]">
+            <h3 className="text-lg font-bold text-[#F1F0EC]">
+              {plannedProject.title}
+            </h3>
+            <span className="font-mono text-xs text-[#0077CA] font-medium">
               Status: {plannedProject.status}
             </span>
           </div>
@@ -50,7 +45,7 @@ export const ProjectsSection: React.FC = () => {
           </p>
 
           <div className="pt-2 border-t border-[#444A50] flex items-center gap-2 text-xs text-[#979C9F]">
-            <Info className="h-3.5 w-3.5 text-[#2E78B7] shrink-0" />
+            <Info className="h-3.5 w-3.5 text-[#0077CA] shrink-0" />
             <span>{plannedProject.nextSteps}</span>
           </div>
         </div>

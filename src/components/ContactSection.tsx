@@ -19,13 +19,13 @@ export const ContactSection: React.FC = () => {
   const getChannelIcon = (name: string) => {
     switch (name) {
       case 'Email':
-        return <Mail className="h-4 w-4 text-[#F15A32]" />;
+        return <Mail className="h-4 w-4 text-[#0077CA]" />;
       case 'Instagram':
-        return <Instagram className="h-4 w-4 text-[#F15A32]" />;
+        return <Instagram className="h-4 w-4 text-[#0077CA]" />;
       case 'LinkedIn':
-        return <Linkedin className="h-4 w-4 text-[#2E78B7]" />;
+        return <Linkedin className="h-4 w-4 text-[#0077CA]" />;
       default:
-        return <ExternalLink className="h-4 w-4 text-[#C4C6C5]" />;
+        return <ExternalLink className="h-4 w-4 text-[#0077CA]" />;
     }
   };
 
@@ -73,7 +73,7 @@ export const ContactSection: React.FC = () => {
                       <div className="p-1 rounded bg-[#2B2E33] border border-[#444A50]">
                         {getChannelIcon(channel.name)}
                       </div>
-                      <span className="text-xs font-bold text-[#F1F0EC] group-hover:text-[#F15A32] transition-colors">
+                      <span className="text-xs font-bold text-[#F1F0EC] group-hover:text-[#0077CA] transition-colors">
                         {channel.name}
                       </span>
                     </div>
@@ -84,21 +84,21 @@ export const ContactSection: React.FC = () => {
                           type="button"
                           onClick={handleCopyEmail}
                           title={copied ? "Copied!" : "Copy email to clipboard"}
-                          className="p-1 rounded text-[#979C9F] hover:text-[#F1F0EC] hover:bg-[#2B2E33] transition-colors cursor-pointer"
+                          className="p-1 rounded text-[#979C9F] hover:text-[#0077CA] hover:bg-[#2B2E33] transition-colors cursor-pointer"
                         >
                           {copied ? (
                             <Check className="h-3.5 w-3.5 text-emerald-400" />
                           ) : (
-                            <Copy className="h-3.5 w-3.5" />
+                            <Copy className="h-3.5 w-3.5 text-[#0077CA]" />
                           )}
                           <span className="sr-only">Copy email address</span>
                         </button>
                       )}
-                      <ExternalLink className="h-3 w-3 text-[#979C9F] group-hover:text-[#F15A32] transition-colors" />
+                      <ExternalLink className="h-3 w-3 text-[#979C9F] group-hover:text-[#0077CA] transition-colors" />
                     </div>
                   </div>
 
-                  <div className="text-sm font-semibold text-[#F1F0EC] group-hover:text-[#F15A32] transition-colors truncate">
+                  <div className="text-sm font-semibold text-[#F1F0EC] group-hover:text-[#0077CA] transition-colors truncate">
                     {channel.handle}
                   </div>
                 </div>

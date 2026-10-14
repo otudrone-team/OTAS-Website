@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { WEBSITE_CONTENT } from '../data/content';
-import { Flag, Milestone } from 'lucide-react';
 import { SectionSubheading } from './SectionSubheading';
 
 export const CompetitionSection: React.FC = () => {
@@ -25,9 +24,8 @@ export const CompetitionSection: React.FC = () => {
 
         {/* Explanation of AEAC */}
         <div className="space-y-3">
-          <SectionSubheading as="h3" className="flex items-center gap-2 mb-0">
-            <Flag className="h-3.5 w-3.5" />
-            <span>About AEAC</span>
+          <SectionSubheading as="h3" className="mb-0">
+            About AEAC
           </SectionSubheading>
           <p className="text-sm sm:text-base text-[#C4C6C5] leading-relaxed">
             {competition.whatIsAeac}
@@ -36,9 +34,8 @@ export const CompetitionSection: React.FC = () => {
 
         {/* Planned Path */}
         <div className="space-y-4">
-          <SectionSubheading as="h3" className="flex items-center gap-2 mb-0">
-            <Milestone className="h-3.5 w-3.5" />
-            <span>Our Planned Path</span>
+          <SectionSubheading as="h3" className="mb-0">
+            Our Planned Path
           </SectionSubheading>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

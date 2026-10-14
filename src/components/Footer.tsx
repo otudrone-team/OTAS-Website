@@ -8,7 +8,7 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
-    <footer className="border-t border-[#3D4349] bg-[#5E666E] text-[#E2E4E2] text-xs">
+    <footer className="border-t border-[#3D4349] bg-[#191B1F] text-[#E2E4E2] text-xs">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="space-y-2">
@@ -47,7 +47,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </button>
             <button
               onClick={() => onNavigate('sponsor-us')}
-              className="text-[#F15A32] font-semibold hover:text-white transition-colors cursor-pointer"
+              className="hover:text-[#F15A32] transition-colors cursor-pointer"
             >
               Sponsor Us
             </button>
