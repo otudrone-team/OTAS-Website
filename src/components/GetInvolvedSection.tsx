@@ -56,9 +56,9 @@ export const GetInvolvedSection: React.FC = () => {
 
         {/* Departments List */}
         <div className="space-y-4">
-          <SectionSubheading as="h3" className="mb-0">
+          <h3 className="text-base sm:text-lg font-bold text-[#F1F0EC]">
             {getInvolved.departmentsHeading}
-          </SectionSubheading>
+          </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {getInvolved.departments.map((dept, idx) => (
@@ -100,10 +100,9 @@ export const GetInvolvedSection: React.FC = () => {
             href={SITE_CONFIG.externalForms.studentApplicationUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 text-xs sm:text-sm font-semibold text-[#191B1F] bg-[#F15A32] hover:bg-[#FF7045] rounded-md transition-colors shrink-0"
+            className="inline-flex items-center px-5 py-2.5 text-xs sm:text-sm font-semibold text-white bg-[#0077CA] hover:bg-[#008AE6] rounded-md transition-colors shrink-0 shadow-sm"
           >
-            <span>Apply Now</span>
-            <ExternalLink className="h-4 w-4" />
+            Apply Now
           </a>
         </div>
       </motion.div>

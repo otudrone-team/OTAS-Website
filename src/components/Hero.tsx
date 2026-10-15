@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { WEBSITE_CONTENT } from '../data/content';
-import { ArrowRight, Handshake } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import HeroDrone from './HeroDrone';
 
 interface HeroProps {
@@ -38,10 +38,9 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
               <div className="pt-2 flex flex-wrap items-center gap-3 sm:gap-4">
                 <button
                   onClick={() => onNavigate('sponsor-us')}
-                  className="flex items-center gap-2 px-5 py-2.5 text-xs sm:text-sm font-semibold text-[#191B1F] bg-[#F15A32] hover:bg-[#FF7045] rounded-md transition-colors cursor-pointer shadow-sm"
+                  className="px-5 py-2.5 text-xs sm:text-sm font-semibold text-[#191B1F] bg-[#F15A32] hover:bg-[#FF7045] rounded-md transition-colors cursor-pointer shadow-sm"
                 >
-                  <Handshake className="h-4 w-4" />
-                  <span>Sponsor Us</span>
+                  Sponsor Us
                 </button>
                 <button
                   onClick={() => onNavigate('get-involved')}

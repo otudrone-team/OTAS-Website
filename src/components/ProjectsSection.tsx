@@ -24,12 +24,7 @@ export const ProjectsSection: React.FC = () => {
           </h2>
         </div>
 
-        {/* Honest pre-launch line */}
-        <p className="text-sm sm:text-base text-[#C4C6C5] italic">
-          {projects.preLaunchDisclaimer}
-        </p>
-
-        {/* Single Planned Placeholder Entry Card */}
+        {/* Single Planned Entry Card */}
         <div className="rounded-xl border border-[#444A50] bg-[#22252A] p-6 space-y-4 hover:border-[#5E666E] transition-colors">
           <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 pb-1 border-b border-[#3D4349]">
             <h3 className="text-lg font-bold text-[#F1F0EC]">

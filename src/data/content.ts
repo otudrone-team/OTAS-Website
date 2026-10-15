@@ -14,7 +14,6 @@ export interface TeamSectionContent {
     eyebrow: string;
     heading: string;
     paragraphs: string[];
-    noProjectsDisclaimer?: string;
   };
   competition: {
     eyebrow: string;
@@ -30,7 +29,6 @@ export interface TeamSectionContent {
   projects: {
     eyebrow: string;
     heading: string;
-    preLaunchDisclaimer: string;
     plannedProject: {
       title: string;
       status: string;
@@ -105,12 +103,6 @@ export interface SiteConfig {
   location: string;
   contactEmail: string;
   recruitmentOpen: boolean;
-  provisionalStatusNotice: {
-    enabled: boolean;
-    badge: string;
-    message: string;
-    subtext?: string;
-  };
   externalForms: {
     studentApplicationUrl: string;
     sponsorInquiryUrl: string;
@@ -125,14 +117,6 @@ export const SITE_CONFIG: SiteConfig = {
   location: "Ontario Tech University, Oshawa, Ontario, Canada",
   contactEmail: "otudrone@gmail.com",
   recruitmentOpen: true,
-
-  // Provisional / Pending University Status Banner (kept configurable, disabled by default)
-  provisionalStatusNotice: {
-    enabled: false,
-    badge: "Official Status: Recognized",
-    message: "Recognized Engineering Design Team at Ontario Tech University.",
-    subtext: "Faculty of Engineering and Applied Science",
-  },
 
   // External Form Links
   externalForms: {
@@ -180,7 +164,6 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
   projects: {
     eyebrow: "Technical Development",
     heading: "Current Engineering Projects",
-    preLaunchDisclaimer: "Our initial engineering projects are in development.",
     plannedProject: {
       title: "Modular Quadcopter Testbed",
       status: "In Development",
@@ -277,7 +260,7 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
 
   getInvolved: {
     eyebrow: "Students & New Recruits",
-    heading: "Get Involved with OTAS",
+    heading: "Join Us",
     invitation: "We invite Ontario Tech students from any faculty, program, or academic year to join our team. No prior drone, robotics, or aerospace experience is needed. We are here to learn, build, and test together through hands-on technical projects.",
     departmentsHeading: "Team Departments",
     departments: [

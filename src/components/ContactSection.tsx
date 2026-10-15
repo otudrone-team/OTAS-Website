@@ -50,12 +50,9 @@ export const ContactSection: React.FC = () => {
 
         {/* Professional & Social Channels */}
         <div className="p-6 rounded-lg border border-[#444A50] bg-[#22252A] space-y-4">
-          <div className="flex items-center justify-between">
-            <SectionSubheading as="h3" className="mb-0">
-              Official Team Channels
-            </SectionSubheading>
-            <span className="text-[11px] font-mono text-[#979C9F]">Connect with the team</span>
-          </div>
+          <h3 className="text-sm font-bold text-[#F1F0EC]">
+            Official Team Channels
+          </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 items-stretch">
             {contact.socials.map((channel) => (

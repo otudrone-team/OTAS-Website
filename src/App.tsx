@@ -5,7 +5,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import { StatusBanner } from './components/StatusBanner';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { AboutSection } from './components/AboutSection';
@@ -123,9 +122,6 @@ export default function App() {
       <div className="min-h-screen bg-[#191B1F] text-[#F1F0EC] flex flex-col font-sans selection:bg-[#F15A32] selection:text-white">
         {/* Persistent Combined Sticky Header Container */}
         <div className="sticky top-0 z-40 w-full shadow-md">
-          {/* Super Top Notice Banner (Provisional Recognition / Under Review) */}
-          <StatusBanner />
-
           {/* Top Bar Navigation */}
           <Navbar
             activeSection={activeSection}

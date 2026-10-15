@@ -24,9 +24,9 @@ export const CompetitionSection: React.FC = () => {
 
         {/* Explanation of AEAC */}
         <div className="space-y-3">
-          <SectionSubheading as="h3" className="mb-0">
+          <h3 className="text-base sm:text-lg font-bold text-[#F1F0EC]">
             About AEAC
-          </SectionSubheading>
+          </h3>
           <p className="text-sm sm:text-base text-[#C4C6C5] leading-relaxed">
             {competition.whatIsAeac}
           </p>
@@ -34,9 +34,9 @@ export const CompetitionSection: React.FC = () => {
 
         {/* Planned Path */}
         <div className="space-y-4">
-          <SectionSubheading as="h3" className="mb-0">
+          <h3 className="text-base sm:text-lg font-bold text-[#F1F0EC]">
             Our Planned Path
-          </SectionSubheading>
+          </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {competition.roadmap.map((item, idx) => (

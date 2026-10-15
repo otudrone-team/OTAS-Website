@@ -44,9 +44,9 @@ export const SponsorUsSection: React.FC = () => {
 
         {/* Value Proposition for Sponsors */}
         <div className="p-5 rounded-lg border border-[#444A50] bg-[#22252A] space-y-3">
-          <SectionSubheading as="h3" className="mb-0">
+          <h3 className="text-base sm:text-lg font-bold text-[#F1F0EC]">
             Why Support Our Team Now
-          </SectionSubheading>
+          </h3>
           <p className="text-xs sm:text-sm text-[#C4C6C5] leading-relaxed">
             {sponsorUs.whySponsor}
           </p>
@@ -54,14 +54,9 @@ export const SponsorUsSection: React.FC = () => {
 
         {/* 3-Tier Sponsorship Packages */}
         <div className="space-y-4">
-          <div className="flex items-center justify-between">
-            <SectionSubheading as="h3" className="mb-0">
-              {sponsorUs.tiersHeading}
-            </SectionSubheading>
-            <span className="text-[11px] font-mono text-[#979C9F]">
-              Collegiate Partnerships
-            </span>
-          </div>
+          <h3 className="text-base sm:text-lg font-bold text-[#F1F0EC]">
+            {sponsorUs.tiersHeading}
+          </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
             {sponsorUs.tiers.map((tier, idx) => (
@@ -104,9 +99,9 @@ export const SponsorUsSection: React.FC = () => {
 
         {/* Condensed Foundational Needs (Split into 2 Modules) */}
         <div className="space-y-4">
-          <SectionSubheading as="h3" className="mb-0">
+          <h3 className="text-base sm:text-lg font-bold text-[#F1F0EC]">
             {sponsorUs.currentNeedsHeading}
-          </SectionSubheading>
+          </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Monetary Sponsorship Funds */}
@@ -149,9 +144,9 @@ export const SponsorUsSection: React.FC = () => {
 
         {/* What We Can Offer in Return */}
         <div className="space-y-3">
-          <SectionSubheading as="h3" className="mb-0">
+          <h3 className="text-base sm:text-lg font-bold text-[#F1F0EC]">
             {sponsorUs.whatWeOfferHeading}
-          </SectionSubheading>
+          </h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             {sponsorUs.whatWeOffer.map((offer, idx) => (
               <div
@@ -172,9 +167,9 @@ export const SponsorUsSection: React.FC = () => {
         {/* Dual Sponsorship Action Callouts */}
         <div className="p-6 rounded-xl border border-[#F15A32]/50 bg-[#22252A] space-y-5 shadow-lg">
           <div className="space-y-2">
-            <SectionSubheading as="h3" className="mb-0">
+            <h3 className="text-base sm:text-lg font-bold text-[#F1F0EC]">
               Ready to Discuss a Partnership?
-            </SectionSubheading>
+            </h3>
             <p className="text-xs sm:text-sm text-[#C4C6C5] leading-relaxed">
               {sponsorUs.contactPrompt}
             </p>

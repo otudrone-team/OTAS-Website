@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Handshake, ExternalLink } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { OtasLogo } from './OtasLogo';
 import { SITE_CONFIG } from '../data/content';
 
@@ -20,7 +20,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'competition', label: 'Competition' },
     { id: 'projects', label: 'Projects' },
     { id: 'sponsor-us', label: 'Sponsor Us' },
-    { id: 'get-involved', label: 'Team Info' },
+    { id: 'get-involved', label: 'JOIN US' },
     { id: 'contact', label: 'Contact' },
   ];
 
@@ -55,7 +55,6 @@ export const Navbar: React.FC<NavbarProps> = ({
           <nav className="flex items-center gap-1 text-sm font-medium">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
-              const isSponsor = link.id === 'sponsor-us';
               return (
                 <button
                   key={link.id}
@@ -81,31 +80,29 @@ export const Navbar: React.FC<NavbarProps> = ({
             })}
           </nav>
 
-          {/* Configurable "Join Us" button linking to Microsoft Forms (toggled via SITE_CONFIG.recruitmentOpen) */}
+          {/* Configurable "Apply Now" button linking to Microsoft Forms (toggled via SITE_CONFIG.recruitmentOpen) */}
           {SITE_CONFIG.recruitmentOpen && (
             <a
               href={SITE_CONFIG.externalForms.studentApplicationUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md text-xs font-mono font-bold uppercase tracking-wider text-white bg-[#0077CA] hover:bg-[#008AE6] shadow-sm transition-all"
+              className="inline-flex items-center px-4 py-1.5 rounded-md text-xs font-mono font-bold uppercase tracking-wider text-white bg-[#0077CA] hover:bg-[#008AE6] shadow-sm transition-all"
             >
-              <span>Join Us</span>
-              <ExternalLink className="h-3 w-3" />
+              Apply Now
             </a>
           )}
         </div>
 
-        {/* Mobile Top Right - Join Us Pill (if open) + Hamburger */}
+        {/* Mobile Top Right - Apply Now Pill (if open) + Hamburger */}
         <div className="flex md:hidden items-center gap-2">
           {SITE_CONFIG.recruitmentOpen && (
             <a
               href={SITE_CONFIG.externalForms.studentApplicationUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 px-2.5 py-1 rounded text-[11px] font-mono font-bold uppercase tracking-wider text-white bg-[#0077CA] hover:bg-[#008AE6] transition-colors"
+              className="inline-flex items-center px-3 py-1 rounded text-[11px] font-mono font-bold uppercase tracking-wider text-white bg-[#0077CA] hover:bg-[#008AE6] transition-colors"
             >
-              <span>Join Us</span>
-              <ExternalLink className="h-2.5 w-2.5" />
+              Apply Now
             </a>
           )}
           <button
@@ -149,18 +146,16 @@ export const Navbar: React.FC<NavbarProps> = ({
                 href={SITE_CONFIG.externalForms.studentApplicationUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-[#0077CA] hover:bg-[#008AE6] rounded transition-colors"
+                className="w-full flex items-center justify-center px-4 py-2 text-xs font-semibold text-white bg-[#0077CA] hover:bg-[#008AE6] rounded transition-colors"
               >
-                <span>Student Application Form</span>
-                <ExternalLink className="h-3.5 w-3.5" />
+                Apply Now
               </a>
             )}
             <button
               onClick={() => handleLinkClick('sponsor-us')}
-              className="w-full flex items-center justify-center gap-1.5 px-4 py-2 text-xs font-semibold text-[#F1F0EC] bg-[#22252A] hover:bg-[#2B2E33] border border-[#444A50] rounded transition-colors"
+              className="w-full flex items-center justify-center px-4 py-2 text-xs font-semibold text-[#F1F0EC] bg-[#22252A] hover:bg-[#2B2E33] border border-[#444A50] rounded transition-colors"
             >
-              <Handshake className="h-3.5 w-3.5 text-[#F15A32]" />
-              <span>Sponsor OTAS</span>
+              Sponsor OTAS
             </button>
           </div>
         </div>
