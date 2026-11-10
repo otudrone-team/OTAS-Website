@@ -8,7 +8,6 @@ export interface TeamSectionContent {
     teamName: string;
     headline: string;
     subheading: string;
-    note?: string;
   };
   about: {
     eyebrow: string;
@@ -24,7 +23,6 @@ export interface TeamSectionContent {
       title: string;
       description: string;
     }[];
-    statusNote?: string;
   };
   projects: {
     eyebrow: string;
@@ -45,7 +43,6 @@ export interface TeamSectionContent {
     tiers: {
       name: string;
       range: string;
-      highlight?: boolean;
       description: string;
       perks: string[];
     }[];
@@ -115,13 +112,13 @@ export const SITE_CONFIG: SiteConfig = {
   shortName: "OTAS",
   university: "Ontario Tech University",
   location: "Ontario Tech University, Oshawa, Ontario, Canada",
-  contactEmail: "otudrone@gmail.com",
+  contactEmail: "otas@ontariotechu.net",
   recruitmentOpen: true,
 
   // External Form Links
   externalForms: {
     studentApplicationUrl: "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=4aDMUVotG02qmt2qp4ruwo-2n_UZr7VOlcJUsk7Kfn5UNFoxTk5MM1NJQUpHWjlaODNVWU05VFEzQy4u",
-    sponsorInquiryUrl: "mailto:otudrone@gmail.com?subject=Sponsorship%20Inquiry%20-%20Ontario%20Tech%20Aerial%20Systems",
+    sponsorInquiryUrl: "mailto:otas@ontariotechu.net?subject=Sponsorship%20Inquiry%20-%20Ontario%20Tech%20Aerial%20Systems",
     officialClubsPortalUrl: "https://engineering.ontariotechu.ca/current-students/current-undergraduate/clubs_and_societies/index.php",
   },
 };
@@ -301,14 +298,14 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
     eyebrow: "Get in Touch",
     heading: "Contact the Team",
     description: "Interested in sponsoring, joining, or connecting with the student team? Reach out through any of the channels below.",
-    email: "otudrone@gmail.com",
+    email: "otas@ontariotechu.net",
     location: "Ontario Tech University, Oshawa, Ontario, Canada",
     socials: [
       {
         name: "Email",
-        handle: "otudrone@gmail.com",
+        handle: "otas@ontariotechu.net",
         description: "Direct sponsorship and student inquiry inbox",
-        url: "mailto:otudrone@gmail.com",
+        url: "mailto:otas@ontariotechu.net",
       },
       {
         name: "Instagram",
@@ -321,6 +318,12 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
         handle: "Ontario Tech Aerial Systems",
         description: "Professional updates, partnerships & industry outreach",
         url: "https://www.linkedin.com/company/ontario-tech-aerial-systems",
+      },
+      {
+        name: "X",
+        handle: "@ontechdrone",
+        description: "Team news, quick updates & campus announcements",
+        url: "https://x.com/ontechdrone",
       },
     ],
   },

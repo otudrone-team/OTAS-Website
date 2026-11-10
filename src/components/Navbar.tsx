@@ -153,9 +153,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             )}
             <button
               onClick={() => handleLinkClick('sponsor-us')}
-              className="w-full flex items-center justify-center px-4 py-2 text-xs font-semibold text-[#F1F0EC] bg-[#22252A] hover:bg-[#2B2E33] border border-[#444A50] rounded transition-colors"
+              className="w-full flex items-center justify-center px-4 py-2 text-xs font-semibold text-[#191B1F] bg-[#F15A32] hover:bg-[#FF7045] rounded transition-colors cursor-pointer"
             >
-              Sponsor OTAS
+              Sponsor Us
             </button>
           </div>
         </div>
