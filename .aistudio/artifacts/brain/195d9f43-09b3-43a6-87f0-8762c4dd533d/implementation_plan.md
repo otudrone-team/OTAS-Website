@@ -1,35 +1,48 @@
-# Implementation Plan: Navigation, CTA Buttons & Subtitle Consistency
+# Implementation Plan: Targeted Enhancements & Polish
 
-## 1. Icon Cleanups in Buttons & Menus
-- **Hero Section (`src/components/Hero.tsx`)**:
-  - Remove the `<Handshake />` icon from the `"Sponsor Us"` button so it renders clean text only.
-- **Top Bar & Mobile Drawer (`src/components/Navbar.tsx`)**:
-  - In top bar buttons, change text from `"Join Us"` to `"Apply Now"`, remove `<ExternalLink />` icon, and keep Ontario Tech blue (`#0077CA`).
-  - In mobile drawer:
-    - Remove `<ExternalLink />` icon from the application form button and set text to `"Apply Now"`.
-    - Remove `<Handshake />` icon from `"Sponsor OTAS"` button so both buttons render clean, icon-free text.
+Based on your feedback, we are implementing all suggested enhancements **excluding** the metric spec row and PDF download.
 
-## 2. Rename 'Team Info' to 'JOIN US'
-- **Navigation Links (`src/components/Navbar.tsx`)**:
-  - Change nav item label from `"Team Info"` to `"JOIN US"`.
-- **Footer Links (`src/components/Footer.tsx`)**:
-  - Change `"Student Application"` to `"Join Us"`.
-- **Get Involved Section (`src/data/content.ts` & `src/components/GetInvolvedSection.tsx`)**:
-  - Update main section heading to `"Join Us"`.
-  - In the application banner at the bottom of the section, update the CTA button to Ontario Tech light blue (`#0077CA`, `hover:bg-[#008AE6]`, text white) with text `"Apply Now"` (matching the top bar).
+---
 
-## 3. Contact Section Cleanup (`src/components/ContactSection.tsx`)
-- Remove the redundant `"Connect with the team"` text inside the card header box.
+## 1. Roadmap Copy & Typo Corrections
+* **File**: `src/data/content.ts`
+* **Change**:
+  - Correct `"resiliant"` to `"resilient"`.
+  - Correct `"next years"` to `"next year's"`.
+  - Ensure the Year 1 milestone reads clean, professional, and natural.
 
-## 4. Perfect Subtitle Consistency Across Entire Site
-- **Rule**: Mini orange uppercase subtitles (`<SectionSubheading>`) are used **strictly at the Section-Top** above the main section title (e.g. `Our Mission & Origins`, `National Collegiate Challenge`, `Technical Development`, `Industry & Community Partners`, `Students & New Recruits`, `Official Inquiries`).
-- **Remove from Inside Boxes**:
-  - In `CompetitionSection.tsx`: Convert subsection headers (`About AEAC`, `Our Planned Path`) into clean standard bold headings (`h3`).
-  - In `SponsorUsSection.tsx`: Convert `Why Support Our Team Now`, `Sponsorship Tiers`, `Foundational Hardware & Resource Needs`, `What We Offer Partners`, and `Ready to Discuss a Partnership?` into clean standard bold titles (`h3`) without mini orange eyebrow styling. Remove the redundant `"Collegiate Partnerships"` label.
-  - In `GetInvolvedSection.tsx`: Convert `Team Departments` into a clean standard title (`h3`).
-  - In `ContactSection.tsx`: Convert `Official Team Channels` into a clean standard title (`h3`).
+---
 
-## 5. Verification & Testing
-- Validate with `lint_applet` and `compile_applet`.
-- Ensure `bun.lock` is absent and `.gitignore` remains intact.
-- Verify consistent styling across desktop and mobile.
+## 2. Hero Secondary CTA Button Unification
+* **File**: `src/components/Hero.tsx`
+* **Change**:
+  - Update the secondary button text from `"Student Application"` to `"Apply Now"`.
+  - Retain the dark card styling with border hover transition (`hover:border-[#FF7045]`) to maintain visual hierarchy with the primary orange `"Sponsor Us"` button.
+  - Ensures seamless CTA terminology across the Hero, Navigation Bar, and Join Us section.
+
+---
+
+## 3. Prospective Student FAQ Accordion in "Join Us"
+* **Files**: `src/data/content.ts`, `src/components/GetInvolvedSection.tsx`
+* **Design & Features**:
+  - Place a lightweight, collapsible 3-item FAQ accordion directly above the "Ready to Join the Team?" application banner.
+  - Topics covered:
+    1. **Time Commitment**: ~3–5 hours/week, flexible around midterms, exams, and class schedules.
+    2. **Eligible Programs**: All Ontario Tech students across any faculty (Engineering, Computer Science, Business, Science, etc.) are welcome.
+    3. **Application Next Steps**: Continuous intake; team leads follow up via student email regarding meeting times and subteam onboarding.
+  - Smooth animation with chevron indicator and Ontario Tech blue (`#0077CA`) accents.
+
+---
+
+## 4. Accessibility & Keyboard Navigation Focus Rings
+* **Files**: `src/index.css`, `src/components/Navbar.tsx`, `src/components/Hero.tsx`, `src/components/SponsorUsSection.tsx`, `src/components/GetInvolvedSection.tsx`
+* **Change**:
+  - Add standard `focus-visible:ring-2 focus-visible:ring-[#F15A32] focus-visible:outline-none focus-visible:ring-offset-2 focus-visible:ring-offset-[#191B1F]` across buttons, links, and interactive elements.
+  - Ensures clean navigation for keyboard and screen-reader users without affecting mouse-click aesthetics.
+
+---
+
+## Verification Plan
+* Run `lint_applet` and `compile_applet` to confirm zero syntax or type errors.
+* Verify mobile layout and drawer functionality.
+* Confirm that `bun.lock` remains deleted.
