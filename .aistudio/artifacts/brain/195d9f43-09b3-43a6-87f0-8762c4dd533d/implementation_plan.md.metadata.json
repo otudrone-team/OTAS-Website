@@ -1,6 +1,0 @@
-{
-  "summary":  "Revised implementation plan focusing on: 1) Typo and copy fixes in the competition roadmap, 2) Hero secondary CTA unification to 'Apply Now', 3) Lightweight interactive FAQ accordion in the Join Us section, and 4) High-contrast accessibility focus rings across all interactive elements. (Excluded metric spec row and PDF download as requested).",
-  "updatedAt":  "2026-11-10T16:54:18.917425947Z",
-  "requestFeedback":  true,
-  "userFacing":  true
-}

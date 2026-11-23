@@ -52,6 +52,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               Sponsor Us
             </button>
             <button
+              onClick={() => onNavigate('sponsors')}
+              className="hover:text-[#F15A32] transition-colors cursor-pointer"
+            >
+              Sponsors
+            </button>
+            <button
               onClick={() => onNavigate('get-involved')}
               className="hover:text-[#F15A32] transition-colors cursor-pointer"
             >

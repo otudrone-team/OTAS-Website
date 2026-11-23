@@ -11,7 +11,13 @@ import {
 } from 'lucide-react';
 import { SectionSubheading } from './SectionSubheading';
 
-export const SponsorUsSection: React.FC = () => {
+interface SponsorUsSectionProps {
+  onNavigate: (sectionId: string) => void;
+}
+
+export const SponsorUsSection: React.FC<SponsorUsSectionProps> = ({
+  onNavigate,
+}) => {
   const { sponsorUs } = WEBSITE_CONTENT;
   const [copied, setCopied] = useState(false);
 
@@ -54,9 +60,18 @@ export const SponsorUsSection: React.FC = () => {
 
         {/* 3-Tier Sponsorship Packages */}
         <div className="space-y-4">
-          <h3 className="text-base sm:text-lg font-bold text-[#F1F0EC]">
-            {sponsorUs.tiersHeading}
-          </h3>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <h3 className="text-base sm:text-lg font-bold text-[#F1F0EC]">
+              {sponsorUs.tiersHeading}
+            </h3>
+            <button
+              type="button"
+              onClick={() => onNavigate('sponsors')}
+              className="self-start sm:self-auto text-xs font-semibold text-[#0077CA] hover:text-[#3399E6] transition-colors cursor-pointer"
+            >
+              View Our Sponsors & Benefits →
+            </button>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
             {sponsorUs.tiers.map((tier, idx) => (

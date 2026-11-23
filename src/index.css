@@ -56,4 +56,11 @@
     caret-color: auto;
     cursor: text;
   }
+
+  /* Accessible high-contrast keyboard focus rings across all interactive elements */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid #F15A32;
+    outline-offset: 2px;
+  }
 }

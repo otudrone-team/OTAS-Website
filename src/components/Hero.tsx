@@ -38,20 +38,20 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
               <div className="pt-2 flex flex-wrap items-center gap-3 sm:gap-4">
                 <button
                   onClick={() => onNavigate('sponsor-us')}
-                  className="px-5 py-2.5 text-xs sm:text-sm font-semibold text-[#191B1F] bg-[#F15A32] hover:bg-[#FF7045] rounded-md transition-colors cursor-pointer shadow-sm"
+                  className="px-5 py-2.5 text-xs sm:text-sm font-semibold text-[#191B1F] bg-[#F15A32] hover:bg-[#FF7045] rounded-md transition-colors cursor-pointer shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F15A32] focus-visible:ring-offset-2 focus-visible:ring-offset-[#191B1F]"
                 >
                   Sponsor Us
                 </button>
                 <button
                   onClick={() => onNavigate('get-involved')}
-                  className="flex items-center gap-2 px-4 py-2.5 text-xs sm:text-sm font-medium text-[#F1F0EC] bg-[#22252A] hover:bg-[#2B2E33] hover:border-[#FF7045] border border-[#444A50] rounded-md transition-colors cursor-pointer"
+                  className="flex items-center gap-2 px-4 py-2.5 text-xs sm:text-sm font-medium text-[#F1F0EC] bg-[#22252A] hover:bg-[#2B2E33] hover:border-[#FF7045] border border-[#444A50] rounded-md transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F15A32] focus-visible:ring-offset-2 focus-visible:ring-offset-[#191B1F]"
                 >
-                  <span>Student Application</span>
+                  <span>Apply Now</span>
                   <ArrowRight className="h-4 w-4" />
                 </button>
                 <button
                   onClick={() => onNavigate('about')}
-                  className="text-xs sm:text-sm text-[#979C9F] hover:text-[#F1F0EC] px-3 py-2 transition-colors cursor-pointer"
+                  className="text-xs sm:text-sm text-[#979C9F] hover:text-[#F1F0EC] px-3 py-2 rounded transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F15A32] focus-visible:ring-offset-2 focus-visible:ring-offset-[#191B1F]"
                 >
                   Read About the Team →
                 </button>

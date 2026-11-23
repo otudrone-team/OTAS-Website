@@ -20,6 +20,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'competition', label: 'Competition' },
     { id: 'projects', label: 'Projects' },
     { id: 'sponsor-us', label: 'Sponsor Us' },
+    { id: 'sponsors', label: 'Sponsors' },
     { id: 'get-involved', label: 'JOIN US' },
     { id: 'contact', label: 'Contact' },
   ];
@@ -44,22 +45,22 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Brand Zone - Clean white OTAS logo only */}
         <button
           onClick={() => handleLinkClick('hero')}
-          className="flex items-center focus:outline-none cursor-pointer py-1"
+          className="flex items-center rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F15A32] focus-visible:ring-offset-2 focus-visible:ring-offset-[#191B1F] cursor-pointer py-1"
           aria-label="OTAS | Ontario Tech Aerial Systems Home"
         >
           <OtasLogo className="h-8 sm:h-9 w-auto" />
         </button>
 
         {/* Navigation Links & Action */}
-        <div className="hidden md:flex items-center gap-3">
-          <nav className="flex items-center gap-1 text-sm font-medium">
+        <div className="hidden md:flex items-center gap-2 lg:gap-3">
+          <nav className="flex items-center gap-0.5 lg:gap-1 text-sm font-medium">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
               return (
                 <button
                   key={link.id}
                   onClick={() => handleLinkClick(link.id)}
-                  className={`transition-all duration-150 py-1.5 px-3 rounded relative cursor-pointer text-xs uppercase tracking-wider font-mono flex items-center gap-2 will-change-transform ${
+                  className={`transition-all duration-150 py-1.5 px-2 lg:px-2.5 rounded relative cursor-pointer text-xs uppercase tracking-wider font-mono flex items-center gap-1.5 will-change-transform whitespace-nowrap ${
                     isActive
                       ? 'text-white font-bold bg-[#22252A]/90 shadow-sm border border-[#444A50]'
                       : 'text-[#E2E4E2] hover:text-white hover:bg-[#2B2E33]/40 border border-transparent'
@@ -107,7 +108,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           )}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-[#E2E4E2] hover:text-white focus:outline-none cursor-pointer"
+            className="p-2 rounded text-[#E2E4E2] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F15A32] focus-visible:ring-offset-2 focus-visible:ring-offset-[#191B1F] cursor-pointer"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

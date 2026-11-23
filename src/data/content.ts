@@ -3,6 +3,16 @@
  * Single Source of Truth Content Configuration
  */
 
+export type SponsorTierId = 'mission-partner' | 'flight-path' | 'ground-link';
+
+export interface SponsorEntry {
+  name: string;
+  tier: SponsorTierId;
+  websiteUrl?: string;
+  logoUrl?: string;
+  description?: string;
+}
+
 export interface TeamSectionContent {
   hero: {
     teamName: string;
@@ -13,6 +23,13 @@ export interface TeamSectionContent {
     eyebrow: string;
     heading: string;
     paragraphs: string[];
+    advisors: {
+      heading: string;
+      summary: string;
+      points: string[];
+      ctaLabel: string;
+      ctaSubject: string;
+    };
   };
   competition: {
     eyebrow: string;
@@ -41,6 +58,7 @@ export interface TeamSectionContent {
     whySponsor: string;
     tiersHeading: string;
     tiers: {
+      id: SponsorTierId;
       name: string;
       range: string;
       description: string;
@@ -77,6 +95,17 @@ export interface TeamSectionContent {
       focus: string;
       description: string;
     }[];
+    advisorRole: {
+      heading: string;
+      description: string;
+      ctaLabel: string;
+      ctaSubject: string;
+    };
+    faqHeading: string;
+    faqs: {
+      question: string;
+      answer: string;
+    }[];
   };
   contact: {
     eyebrow: string;
@@ -90,6 +119,12 @@ export interface TeamSectionContent {
       description: string;
       url: string;
     }[];
+  };
+  sponsorsPage: {
+    eyebrow: string;
+    heading: string;
+    description: string;
+    sponsors: SponsorEntry[];
   };
 }
 
@@ -138,6 +173,18 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
       "Our long-term milestone is to design, manufacture, and fly an autonomous competition aircraft at the annual Aerial Evolution Association of Canada (AEAC) National Student UAS Competition.",
       "During our first year, our focus is on building our team, establishing our workflows, and creating a reliable modular quadcopter.",
     ],
+    advisors: {
+      heading: "Technical & Industry Advisors",
+      summary:
+        "Alongside our student team, OTAS offers Technical & Industry Advisor roles for external experts who want to mentor students and share domain knowledge without holding decision-making power.",
+      points: [
+        "Mentorship Position: Advisors provide technical guidance, design review feedback, and industry perspective across avionics, airframes, software, and flight safety.",
+        "No Decision-Making Power: OTAS remains completely student-led; advisors do not hold voting rights or formal authority over team decisions.",
+        "Open to External Experts: Advisors do not need to be Ontario Tech University students, faculty, or staff.",
+      ],
+      ctaLabel: "Inquire About Advising",
+      ctaSubject: "Advisor Inquiry - Ontario Tech Aerial Systems",
+    },
   },
 
   competition: {
@@ -148,7 +195,7 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
       {
         phase: "Year 1",
         title: "Team Foundations",
-        description: "In our first year we are working on putting our team together - we believe success will come from first building a resiliant team. We are also working on designing, building and then flying our first multirotor drone before next years AEAC competition.",
+        description: "In our first year we are working on putting our team together - we believe success will come from first building a resilient team. We are also working on designing, building and then flying our first multirotor drone before next year's AEAC competition.",
       },
       {
         phase: "Year 2+",
@@ -177,6 +224,7 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
     tiersHeading: "Sponsorship Tiers",
     tiers: [
       {
+        id: "ground-link",
         name: "Ground Link Tier",
         range: "$500 – $999",
         description: "Foundational support strengthening OTAS operations, student development, and early engineering milestones.",
@@ -188,6 +236,7 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
         ],
       },
       {
+        id: "flight-path",
         name: "Flight Path Tier",
         range: "$1,000 – $2,500",
         description: "Expanded support accelerating team growth, hands-on learning, and progress toward major technical milestones.",
@@ -200,6 +249,7 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
         ],
       },
       {
+        id: "mission-partner",
         name: "Mission Partner Tier",
         range: "$2,500+",
         description: "Flagship partnership powering OTAS through its founding years, highest-impact initiatives, and long-term growth.",
@@ -292,6 +342,27 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
         description: "Team budget tracking, hardware procurement logistics, sponsor funding management, and expense accounting.",
       },
     ],
+    advisorRole: {
+      heading: "Technical & Industry Advisors",
+      description: "We welcome experienced engineers, UAV specialists, alumni, and industry professionals into advisory roles to mentor students and review technical designs without holding decision-making power. Advisors do not need to be Ontario Tech University students, faculty, or staff—the team stays student-led while learning from your experience.",
+      ctaLabel: "Inquire About Advising",
+      ctaSubject: "Advisor Inquiry - Ontario Tech Aerial Systems",
+    },
+    faqHeading: "Frequently Asked Questions",
+    faqs: [
+      {
+        question: "What is the weekly time commitment?",
+        answer: "Most members spend around 3 to 5 hours per week on subteam meetings, CAD or software tasks, and hands-on builds. Hours are flexible around midterms, labs, and final exams.",
+      },
+      {
+        question: "Do I have to be in Engineering?",
+        answer: "No. We welcome Ontario Tech students from any faculty, program, or year—including Computer Science, Engineering, Business, and Science.",
+      },
+      {
+        question: "When will I hear back after applying?",
+        answer: "Recruitment runs on a rolling basis. After you submit the application form, a team lead will follow up by university email with subteam onboarding details and meeting times.",
+      },
+    ],
   },
 
   contact: {
@@ -324,6 +395,23 @@ export const WEBSITE_CONTENT: TeamSectionContent = {
         handle: "@ontechdrone",
         description: "Team news, quick updates & campus announcements",
         url: "https://x.com/ontechdrone",
+      },
+    ],
+  },
+
+  sponsorsPage: {
+    eyebrow: "Thank You to Our Partners",
+    heading: "Thank You to Our Sponsors",
+    description:
+      "We are grateful to the companies and organizations that support Ontario Tech Aerial Systems. Your contributions equip our students with the hardware, fabrication tooling, and operational support needed to design, build, and test autonomous aerial vehicles.",
+    // Add confirmed sponsors here:
+    // { name: "Partner Name", tier: "mission-partner" | "flight-path" | "ground-link", websiteUrl: "https://...", logoUrl: "/...", description: "..." }
+    sponsors: [
+      {
+        name: "Protocase",
+        tier: "ground-link",
+        websiteUrl: "https://www.protocase.com/",
+        logoUrl: "/assets/aistudio/protocase-brand_8997491c.png",
       },
     ],
   },

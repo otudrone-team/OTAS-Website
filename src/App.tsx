@@ -11,15 +11,28 @@ import { AboutSection } from './components/AboutSection';
 import { CompetitionSection } from './components/CompetitionSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { SponsorUsSection } from './components/SponsorUsSection';
+import { SponsorsPage } from './components/SponsorsPage';
 import { GetInvolvedSection } from './components/GetInvolvedSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { LoadingScreen } from './components/LoadingScreen';
 import { SectionDivider } from './components/SectionDivider';
 
+type PageView = 'home' | 'sponsors';
+
+const getInitialPage = (): PageView => {
+  if (typeof window !== 'undefined' && window.location.pathname === '/sponsors') {
+    return 'sponsors';
+  }
+  return 'home';
+};
+
 export default function App() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [activeSection, setActiveSection] = useState<string>('hero');
+  const [currentPage, setCurrentPage] = useState<PageView>(getInitialPage);
+  const [activeSection, setActiveSection] = useState<string>(
+    getInitialPage() === 'sponsors' ? 'sponsors' : 'hero'
+  );
   const isProgrammaticScroll = useRef<boolean>(false);
   const scrollTimeout = useRef<number | null>(null);
 
@@ -31,9 +44,20 @@ export default function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Smooth navigation handler
-  const handleNavigate = (sectionId: string) => {
-    setActiveSection(sectionId);
+  // Sync browser Back/Forward navigation between / and /sponsors
+  useEffect(() => {
+    const handlePopState = () => {
+      const nextPage = window.location.pathname === '/sponsors' ? 'sponsors' : 'home';
+      setCurrentPage(nextPage);
+      setActiveSection(nextPage === 'sponsors' ? 'sponsors' : 'hero');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  const scrollToSection = (sectionId: string) => {
     isProgrammaticScroll.current = true;
 
     if (scrollTimeout.current) {
@@ -54,7 +78,7 @@ export default function App() {
       // Dynamically measure the sticky header height or fall back to 64px
       const headerElement = document.querySelector('.sticky');
       const headerHeight = headerElement ? headerElement.getBoundingClientRect().height : 64;
-      
+
       // Calculate target position with comfortable breathing room below sticky nav
       const elementRect = element.getBoundingClientRect();
       const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
@@ -67,8 +91,40 @@ export default function App() {
     }
   };
 
-  // Scroll spy with debounced RAF to update active nav tab smoothly
+  // Smooth navigation handler supporting both home sections and the separate Sponsors page
+  const handleNavigate = (targetId: string) => {
+    if (targetId === 'sponsors') {
+      if (window.location.pathname !== '/sponsors') {
+        window.history.pushState({}, '', '/sponsors');
+      }
+      setCurrentPage('sponsors');
+      setActiveSection('sponsors');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (currentPage === 'sponsors') {
+      if (window.location.pathname !== '/') {
+        window.history.pushState({}, '', '/');
+      }
+      setCurrentPage('home');
+      setActiveSection(targetId);
+      window.requestAnimationFrame(() => {
+        setTimeout(() => {
+          scrollToSection(targetId);
+        }, 40);
+      });
+      return;
+    }
+
+    setActiveSection(targetId);
+    scrollToSection(targetId);
+  };
+
+  // Scroll spy with debounced RAF to update active nav tab smoothly on the main page
   useEffect(() => {
+    if (currentPage !== 'home') return;
+
     let ticking = false;
 
     const handleScroll = () => {
@@ -111,7 +167,7 @@ export default function App() {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [currentPage]);
 
   return (
     <>
@@ -131,38 +187,44 @@ export default function App() {
 
         {/* Main Page Content */}
         <main className="flex-1">
-          {/* 1. Home / Hero */}
-          <Hero onNavigate={handleNavigate} />
+          {currentPage === 'sponsors' ? (
+            <SponsorsPage onNavigate={handleNavigate} />
+          ) : (
+            <>
+              {/* 1. Home / Hero */}
+              <Hero onNavigate={handleNavigate} />
 
-          <SectionDivider />
+              <SectionDivider />
 
-          {/* 2. About */}
-          <AboutSection />
+              {/* 2. About */}
+              <AboutSection />
 
-          <SectionDivider />
+              <SectionDivider />
 
-          {/* 3. Competition / AEAC */}
-          <CompetitionSection />
+              {/* 3. Competition / AEAC */}
+              <CompetitionSection />
 
-          <SectionDivider />
+              <SectionDivider />
 
-          {/* 4. Projects */}
-          <ProjectsSection />
+              {/* 4. Projects */}
+              <ProjectsSection />
 
-          <SectionDivider />
+              <SectionDivider />
 
-          {/* 5. Sponsor Us (Public Face for Sponsors & Industry Partners) */}
-          <SponsorUsSection />
+              {/* 5. Sponsor Us (Public Face for Sponsors & Industry Partners) */}
+              <SponsorUsSection onNavigate={handleNavigate} />
 
-          <SectionDivider />
+              <SectionDivider />
 
-          {/* 6. Get Involved / Join (Student Application Form) */}
-          <GetInvolvedSection />
+              {/* 6. Get Involved / Join (Student Application Form) */}
+              <GetInvolvedSection />
 
-          <SectionDivider />
+              <SectionDivider />
 
-          {/* 7. Contact */}
-          <ContactSection />
+              {/* 7. Contact */}
+              <ContactSection />
+            </>
+          )}
         </main>
 
         {/* Footer */}
