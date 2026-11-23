@@ -67,9 +67,9 @@ export const SponsorUsSection: React.FC<SponsorUsSectionProps> = ({
             <button
               type="button"
               onClick={() => onNavigate('sponsors')}
-              className="self-start sm:self-auto text-xs font-semibold text-[#0077CA] hover:text-[#3399E6] transition-colors cursor-pointer"
+              className="self-start sm:self-auto px-4 py-2 text-sm font-semibold text-white bg-[#0077CA] hover:bg-[#008AE6] rounded-md shadow-sm transition-colors cursor-pointer"
             >
-              View Our Sponsors & Benefits →
+              View Our Sponsors
             </button>
           </div>
 
